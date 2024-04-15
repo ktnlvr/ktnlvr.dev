@@ -1,0 +1,9 @@
+baseURL = 'https://ktnlvr.github.io'
+languageCode = 'en-us'
+title = "Ktnlvr's Attic"
+enableGitInfo = true
+enableRobotsTXT = true
+
+[minify]
+  disableCSS = false
+  minifyOutput = true
