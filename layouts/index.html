@@ -11,12 +11,20 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <style>
+        :root {
+            --text-color: #0B0C0D;
+            --accent-color: #236689;
+            --background-color: #FFF;
+        }
+
         body {
+            color: var(--text-color);
+            background-color: var(--background-color);
+
             margin: 40px auto;
             max-width: 700px;
             line-height: 1.6;
             font-size: 18px;
-            color: #090909;
             padding: 0 10px;
             font-family: "Poppins", sans-serif;
             font-weight: 400;
@@ -30,6 +38,11 @@
         h1 {
             line-height: 1.2
         }
+
+        a {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
@@ -37,14 +50,15 @@
     <main>
         <h1>ktnlvr</h1>
         <p>
-            my name is Art(h)ur Roos (pronounced /ro:s/)
+            i'm Art(h)ur Roos (pronounced /ro:s/)
         </p>
         <p>
             i do game design, low-level stuff, hack on programming languages and crunch math(s) sometimes.
-            puzzles are my thing. good with time and deadlines. pride myself on self and team management.
+            i like a good puzzle, ready to fix your anything. obsessed with agency and resource management.
         </p>
         <p>
-            i'm down to figure out your whatever in rust, c/c++ or python.
+            i'm down to figure out your whatever in rust, c/c++ or python. hire me to design your next thing.
+            <a href="mailto:artur.roos.artur@gmail.com">gmail</a> or <a href="https://t.me/ktnlvr">telegram</a>.
         </p>
     </main>
 </body>
