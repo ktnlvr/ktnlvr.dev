@@ -1,0 +1,7 @@
+{{define "main"}}
+    <h1>{{.Title}}</h1>
+    <p class="epigraph">{{.Params.Brief}}</p>
+    {{ .TableOfContents }}
+    {{.Content}}
+    <iframe src={{.Params.Iframe}}></iframe>
+{{end}}
