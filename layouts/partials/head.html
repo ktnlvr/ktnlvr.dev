@@ -1,4 +1,4 @@
-<title>{{.Title}}</title>
+<title>{{.Title | strings.ToLower}}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=300px, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,13 +6,18 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 <style type="text/css">
     @import url("{{.Site.BaseURL}}style.css");
 </style>
 <link rel="shortcut icon" href="{{.Site.BaseURL}}favicon.ico">
-<meta name="description" content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
+<meta name="description"
+    content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
 
-<meta property="og:description" content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
+<meta property="og:description"
+    content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{.Permalink}}">
-<meta property="og:title" content="{{.Title}}"/>
+<meta property="og:title" content="{{.Title}}" />

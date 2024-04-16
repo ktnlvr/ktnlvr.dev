@@ -1,6 +1,6 @@
 +++
 title = "battleships"
-brief = "a simple prediction engine for the game battleships" 
+brief = "simple prediction engine for battleships the game" 
 draft = false
 iframe = "https://ktnlvr.dev/battleships"
 +++

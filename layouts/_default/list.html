@@ -3,7 +3,7 @@
 <ul class="content-list">
 {{range .Pages}}
 <li class="{{if .Draft}}unlisted{{end}}">
-    <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (Unlisted){{end}}<br>
+    <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (Unlisted){{end}} - {{.Params.Brief}}
 </li>
 {{end}}
 </ul>

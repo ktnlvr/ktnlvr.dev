@@ -32,6 +32,16 @@ a {
     color: var(--accent-color);
 }
 
+h1 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+}
+
 header {
     text-align: center;
     width: 100%;
@@ -42,7 +52,7 @@ footer {
     color: var(--footer-color);
 }
 
-footer > a {
+footer>a {
     color: var(--footer-color);
 }
 
@@ -58,4 +68,18 @@ iframe {
     text-align: right;
     font-weight: normal;
     color: var(--footer-color);
+}
+
+sup::before {
+    content: '['
+}
+
+sup::after {
+    content: ']'
+}
+
+code {
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
