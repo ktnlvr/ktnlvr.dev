@@ -1,9 +1,9 @@
 {{define "main"}}
 {{.Content}}
 <ul class="content-list">
-{{range .Pages}}
+{{range collections.Sort .Pages ".Params.Date" "asc"}}
 <li class="{{if .Draft}}unlisted{{end}}">
-    <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (Unlisted){{end}} - {{.Params.Brief}}
+     <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (unlisted){{end}} - {{.Params.Brief}}. <span style="color: var(--gray-color);">{{.Params.Date.Format "January 2, 2006" }}</span>
 </li>
 {{end}}
 </ul>
