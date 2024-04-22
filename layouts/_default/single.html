@@ -1,11 +1,9 @@
 {{define "main"}}
     <h1>
         {{if .Params.Link}}
-        <a href={{.Params.Link}}>
+        <a href={{.Params.Link}}/tree/HEAD@%7B{{(.Params.Date.AddDate 0 0 1).Unix}}%7D>
         {{end}}
-        
             {{.Title}}
-
         {{if .Params.Link}}
         </a>
         {{end}}
