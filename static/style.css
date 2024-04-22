@@ -1,6 +1,7 @@
 :root {
     --text-color: #0B0C0D;
     --gray-color: #5f5f5f;
+    --light-gray-color: #ababab;
     --accent-color: #236689;
     --background-color: #FFF;
 }
@@ -40,6 +41,16 @@ h1 a {
 h1 a:hover {
     text-decoration: underline;
     text-decoration-thickness: 4px;
+}
+
+h2 {
+    padding-left: 0;
+}
+
+.anchor {
+    cursor: default;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 header {
