@@ -1,4 +1,7 @@
 <footer>
     built with <a href="https://gohugo.io/">hugo</a>
     by Artur Roos (c) 2023-present. {{if not .Draft}}<a href="{{.Permalink}}">permalink</a>.{{end}} <a href="#top">top</a>. <a href="" onclick="history.back()">back</a>. <a href="/">root</a>.
+    {{ if .PublishDate }}
+    <a href="https://github.com/ktnlvr/ktnlvr.github.io/commit/{{.GitInfo.Hash}}">github.</a>
+    {{ end }}
 </footer>
