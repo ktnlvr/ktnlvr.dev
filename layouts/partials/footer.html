@@ -6,9 +6,10 @@
     {{ end }}
     {{if not .Draft}}<a href="{{.Permalink}}">permalink</a>.{{end}}
     <a href="#top">top</a>.
-    <a href="..">up</a>.
-    <a href="" onclick="history.back()">back</a>.
-    <a href="/">root</a>.
+    {{if not .IsHome}}
+        <a href="..">up</a>.
+        <a href="/">root</a>.
+    {{end}}
     {{ if .PublishDate }}
     <a href="https://github.com/ktnlvr/ktnlvr.github.io/commit/{{.GitInfo.Hash}}"><code>{{.GitInfo.AbbreviatedHash}}</code></a>.
     {{ end }}
