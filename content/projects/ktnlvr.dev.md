@@ -4,6 +4,14 @@ brief = "the website you are looking at right now, very meta"
 draft = true
 +++
 
+## `<noscript/>`
+
+I happen to enjoy not having javascript. Thus, most of the website does not use JavaScript. Sure, minor things might use it, the ones that can't be done with standard HTML. To me it is imperative that my website is mostly static. Even the places that use it have a fallback option if it is disabled.
+
+Understandably, this philosophy is impossible apply all over the web. A website of a bank or an electronic judge with no dynamic actions is absurd to think about. My blog isn't a bank or an ejudge. Some of my projects include a link or an `<iframe/>` with the demo, which would be impossible to do if it wasn't for JS.
+
+The only place that actually has JavaScript is the [404 page](https://ktnlvr.dev/this-page-does-not-exist) (provided the server doesn't override it). If you are going to a page that dose not exist you probably really need a search bar.
+
 ## Bells And Whistles
 
 ### MathML
