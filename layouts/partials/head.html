@@ -1,4 +1,4 @@
-<title>{{.Title | strings.ToLower}}</title>
+<title>{{ if .IsHome}} ktnlvr {{ else }} {{.Title | strings.ToLower}} - ktnlvr {{ end }}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=300px, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
