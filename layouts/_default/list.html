@@ -1,12 +1,14 @@
 {{define "main"}}
 <main data-pagefind-body>
      {{.Content}}
+     <ul class="content-list" data-pagefind-ignore>
+          {{range collections.Sort .Pages ".Params.Date" "desc"}}
+          <li class="{{if .Draft}}unlisted{{end}}">
+               <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (unlisted){{end}} -
+               {{.Params.Brief}}. <span style="color: var(--gray-color);">{{.Params.Date.Format "January 2, 2006"
+                    }}</span>
+               </li>
+          {{end}}
+     </ul>
 </main>
-<ul class="content-list">
-{{range collections.Sort .Pages ".Params.Date" "desc"}}
-<li class="{{if .Draft}}unlisted{{end}}">
-     <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (unlisted){{end}} - {{.Params.Brief}}. <span style="color: var(--gray-color);">{{.Params.Date.Format "January 2, 2006" }}</span>
-</li>
-{{end}}
-</ul>
 {{end}}
