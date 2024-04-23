@@ -43,8 +43,13 @@ h2 {
     padding-left: 0;
 }
 
+h1 h2 h3 h4 h5 h6 {
+    min-width: 48px;
+    min-height: 48px;
+}
+
 .anchor {
-    cursor: default;
+    cursor: text;
     color: var(--text-color);
     text-decoration: none;
 }
