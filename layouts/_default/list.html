@@ -1,5 +1,7 @@
 {{define "main"}}
-{{.Content}}
+<main data-pagefind-body>
+     {{.Content}}
+</main>
 <ul class="content-list">
 {{range collections.Sort .Pages ".Params.Date" "desc"}}
 <li class="{{if .Draft}}unlisted{{end}}">

@@ -1,4 +1,14 @@
 {{define "main"}}
 <span>ERR 404.</span>
 <p>page not found, better luck next time.</p>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true });
+    });
+</script>
+
 {{end}}
