@@ -12,7 +12,7 @@ Some features might undergo unnoticed unless pointed out specifically.
 
 Getting maths to work with hugo was a difficult feat, but I did it:
 
-\[f(a) = \dfrac{1}{2\pi i}\oint_\gamma \dfrac{f(z)}{z - a}\,dz\]
+\[f(a) = \dfrac{1}{2\pi i}\oint_\gamma \dfrac{f(z)}{z - a} dz\]
 
 This features introduces a custom step in the build pipeline. Hugo produces a `./public` directory, where all the statically generated pages are. The math embedding `./mathml.py` script is then executed by the Github Action CI/CD pipeline. It looks for `<p>[` and `]</p>`, extracts everything inbetween and then substitutes the contents into `$$`, which is then passed into `pandoc`. Finally, the result from `pandoc` is substituted back into the webpage with square braces removed, producing MathML.
 
