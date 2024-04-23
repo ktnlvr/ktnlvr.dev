@@ -45,8 +45,19 @@ By using GNU `stow`[^stow] it automates the symlink generation. `stow` is simple
 
 ## How to install?
 
-## Shortcomings
+The `install.sh` is in the root of the project, but can be done with the `curl`/`wget` command in `README.md`.
 
-As of writing this, the install script doesn't pair with `sh` (aka dash). Although, I imagine no one to use my configs will ever have 1979's `sh` and not `bash`.
+## Is installing safe?
+
+Stow markets itself as stable and safe[^stow-safe], which it seems to be true. The program was first created in 1993, so it is almost certainly more robust than my `install.sh`.
+
+One could possibly worry that stow will override their existing configurations. Luckily, when ran with the `--adopt` option, all the configuration files that already exist will be copied into the `.dotfiles` directory overriding the downloaded config. This flag is the only destructivee one, since if you don't have your downloaded configs in a git repo, the changes will be lost. Be careful!
+
+In case some of the files are already symlinked, `stow` will issue a warning for each and not procede.
+
+A defensive measure I put in is updates. If someone installs the `.dotfiles` directory if it already exists, the changes are pulled and then applied.
+
+Otherwise, if something goes very wrong all commands have early exits. It won't try and `stow` a non-existent directory. Generally, the script is rather safe.
 
 [^stow]: [GNU `stow`](https://www.gnu.org/software/stow/) "a symlink farm manager" (whatever that is) 
+[^stow-safe]: "substantially simpler and safer", "stow will never delete any files, directories, or links", source: [`man`](https://linux.die.net/man/8/stow)
