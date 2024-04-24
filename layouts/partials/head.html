@@ -11,8 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 <style type="text/css">
     @import url("{{.Site.BaseURL}}style.css");
+    
+    {{ with .Resources.GetMatch "style.css" }}
+        {{ .Content | safeCSS }}
+    {{ end }}
 </style>
-<link rel="shortcut icon" href="{{.Site.BaseURL}}favicon.ico">
+{{ if .Params.Favicon }}
+    <link rel="icon" href="{{ .Resources.GetMatch .Params.Favicon }}">
+{{ else }}
+    <link rel="shortcut icon" href="{{.Site.BaseURL}}favicon.ico">
+{{ end}}
 <meta name="description"
     content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
 <meta property="og:description"
