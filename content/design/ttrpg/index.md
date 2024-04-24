@@ -4,6 +4,7 @@ date: 2024-04-24T17:22:30.531+0300
 brief: "my ttrpg houseruled system based on ezd6" 
 draft: true
 
+unlisted: true
 iframe: ezd6_rule_reference_v1.0.3.pdf
 favicon: ezd6.ico
 ---
