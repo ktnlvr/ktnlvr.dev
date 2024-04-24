@@ -10,7 +10,15 @@
     
     </h1>
     <p class="epigraph">{{.Params.Brief | transform.Markdownify}}</p>
-    {{ .TableOfContents }}
+    <div class="frontmatter">
+        <div>{{ .TableOfContents }}</div>
+        <div>
+            published {{.Params.Date.Format "January 2, 2006"}}.<br>
+            modified {{.Lastmod | time.Format "January 2, 2006"}}.<br>
+            {{ .FuzzyWordCount }} words.
+            ~{{ .ReadingTime }} minutes to read.
+        </div>
+    </div>
     <main data-pagefind-body>
         {{.Content}}
     </main>

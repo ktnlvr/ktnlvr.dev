@@ -95,3 +95,27 @@ code {
     font-optical-sizing: auto;
     font-style: normal;
 }
+
+.frontmatter {
+    padding: 25px 0;
+    display: block;
+}
+
+.frontmatter > * {
+    padding: 1rem;
+}
+
+#TableOfContents > ul {
+    margin-top: 0;
+}
+
+.frontmatter:last-child {
+    text-align: right;
+}
+
+@media (min-width:300px) {
+    .frontmatter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
