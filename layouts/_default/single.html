@@ -15,7 +15,7 @@
         <div>
             published {{.Params.Date.Format "January 2, 2006"}}.<br>
             modified {{.Lastmod | time.Format "January 2, 2006"}}.<br>
-            {{ .FuzzyWordCount }} words.
+            {{ .WordCount }} words.
             ~{{ .ReadingTime }} minutes to read.
         </div>
     </div>
