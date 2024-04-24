@@ -2,7 +2,7 @@
 title = "battleships"
 brief = "simple prediction engine for \"battleships\" the game" 
 draft = false
-iframe = "https://ktnlvr.dev/battleships"
+iframe = "https://battleships.ktnlvr.dev"
 unlisted = true
 +++
 
