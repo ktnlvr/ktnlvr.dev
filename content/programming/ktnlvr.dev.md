@@ -42,6 +42,6 @@ Understandably, this philosophy is impossible apply all over the web. A website 
 
 The only place that actually has JavaScript is the [404 page](/this-page-does-not-exist). If you are going to a non-existent page you really need a search bar.
 
-[^iframe]: For instance, [batteleships](/projects/battleships).
-[^page-speed-insights]: [What does PageSpeed Insights have to say?](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fktnlvr.dev%2Fprojects%2Fktnlvr.dev)
+[^iframe]: For instance, [batteleships](/programming/battleships).
+[^page-speed-insights]: [What does PageSpeed Insights have to say?](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fktnlvr.dev%2Fprogramming%2Fktnlvr.dev)
 [^hugo-maths-official]: [Hugo's docs](https://gohugo.io/content-management/mathematics/) suggest using a `<script>` tag, we can't have that.
