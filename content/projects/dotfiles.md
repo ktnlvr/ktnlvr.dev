@@ -1,8 +1,9 @@
 ---
 title: "dotfiles"
 date: 2024-04-21T19:55:27.205+0300
-brief: "my mayhem of system & software configs" 
 draft: true
+
+brief: "my mayhem of system & software configs" 
 link: https://github.com/ktnlvr/dotfiles
 ---
 
@@ -41,15 +42,19 @@ By using GNU `stow`[^stow] it automates the symlink generation. `stow` is simple
     config    -> .dotfiles/.config/i3/config
   nvim/
     init.lua  -> .dotfiles/.config
+
+-- The rest of the $HOME is intact
 ```
 
 ## How to install?
 
-The `install.sh` is in the root of the project, but can be done with the `curl`/`wget` command in `README.md`.
+The `install.sh` is in the root of the project, but can be done with the `curl`/`wget` command in [`README.md`](https://github.com/ktnlvr/dotfiles/?tab=readme-ov-file#installation).
 
-## Is installing safe?
+## How does it treat my existing system?
 
 Stow markets itself as stable and safe[^stow-safe], which it seems to be true. The program was first created in 1993, so it is almost certainly more robust than my `install.sh`.
+
+Before running it will check that both required dependencies are installed (`stow` and `git`). It isn't too critical, but helps avoid cryptic error messages.
 
 One could possibly worry that stow will override their existing configurations. Luckily, when ran with the `--adopt` option, all the configuration files that already exist will be copied into the `.dotfiles` directory overriding the downloaded config. This flag is the only destructivee one, since if you don't have your downloaded configs in a git repo, the changes will be lost. Be careful!
 

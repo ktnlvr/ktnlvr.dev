@@ -1,16 +1,18 @@
-+++
-title = "ktnlvr.dev"
-brief = "the website you are looking at right now, very meta" 
-draft = true
-+++
+---
+title: ktnlvr.dev
+draft: true
 
-## `<noscript/>`
+unlisted: true
+brief: the website you are looking at right now, very meta
+---
 
-I don't see the purpose of JavaScript for a blog. The content here is static by nature and is intended to be read more often than edited
+## Why this style?
 
-Understandably, this philosophy is impossible apply all over the web. A website of a bank or an electronic judge with no dynamic actions is absurd to think about. My blog isn't a bank or an ejudge. Some of my projects include a link or an `<iframe/>`[^iframe] with the demo, which would be impossible to do if it wasn't for JS, but generally everything is static.
+The style is heavily inspired by [motherfucking website](https://motherfuckingwebsite.com/), [better motherfucking website](http://bettermotherfuckingwebsite.com/) and [the best motherfucking website](https://thebestmotherfucking.website/). I don't enjoy writing media queries, so the website doesn't use any fancy styling. Animations are also not a thing, they can distract from the writing.
 
-The only place that actually has JavaScript is the [404 page](/this-page-does-not-exist). If you are going to a non-existent page you really need a search bar.
+## Does it perform?
+
+This is a static website with a single CSS and no JS files. Can probably run using IPoAC [RFC1149](https://datatracker.ietf.org/doc/html/rfc1149) just fine.[^page-speed-insights]
 
 ## Bells And Whistles
 
@@ -30,4 +32,16 @@ Secondly... TODO
 
 Thirdly, the maths is not visible in the dev environment. When running a hot-reload build with `hugo -D` it uses in-memory pages, which means they are not accessible to any scripts.
 
+On the other hand, getting LaTeX to work on a hugo website *statically* is troublesome. Humble brag? Defo.[^hugo-maths-official]
+
+### `<noscript/>`
+
+I don't see the purpose of JavaScript for a blog. The content here is static by nature and is intended to be read more often than edited
+
+Understandably, this philosophy is impossible apply all over the web. A website of a bank or an electronic judge with no dynamic actions is absurd to think about. My blog isn't a bank or an ejudge. Some of my projects include a link or an `<iframe/>`[^iframe] with the demo, which would be impossible to do if it wasn't for JS, but generally everything is static.
+
+The only place that actually has JavaScript is the [404 page](/this-page-does-not-exist). If you are going to a non-existent page you really need a search bar.
+
 [^iframe]: For instance, [batteleships](/projects/battleships).
+[^page-speed-insights]: [What does PageSpeed Insights have to say?](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fktnlvr.dev%2Fprojects%2Fktnlvr.dev)
+[^hugo-maths-official]: [Hugo's docs](https://gohugo.io/content-management/mathematics/) suggest using a `<script>` tag, we can't have that.
