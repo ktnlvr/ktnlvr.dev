@@ -27,7 +27,7 @@ EZD6 was love at first sight. The core advantages to me from *d20 roll-under + V
 * **No Leveling** Party is only as powerful as their items and profficiencies, the only way to enhance your characters is by doing what would be sensible. As far as I know, most tables rule with milestone[^what-is-milestone] leveling anyway, but this makes every upgrade althemore precious.
 * **Tofu** Most things have little flavour, so they are easier to bend to suit another setting.
 * **Universality** Roll `Nd6`, take highest or lowest, done. Most things are resolved like that. The only types of boosts one gain from their party members is rolling more dice, thereby increasing th chances of rolling a higher number.
-* **Rule Synergy** Since there are so few rules all of them feed into eachother, discussed further in [MDA Analys](#mda-analysis). 
+* **Rule Synergy** Since there are so few rules all of them feed into eachother, discussed further in [MDA Analysis](#mda-analysis). 
 * **No "Gaming The System"** The system is very small and relies heavily on player-to-dm trust. I think that said trust should de facto be on the table in any game, but the light weight ensures munchkins and minmaxers don't win over by a technicality.
 * **No Mental Maths** I like maths problems and puzzles. I hate mental maths. Haven't met a single person that enjoys it, all the less the chance that they'll play in my game.
 
@@ -87,7 +87,13 @@ Notice, that they don't guarantee a successful cast, they only *allow* an opport
 
 ## Other Mechanics
 
-### Casting Boons / Banes
+### Daggerheart's Turn Dynamic
+
+Players go in whatever order they choose. Unless surprised, the players always go first. Players keep doing actions on their turn until they fail a roll. For every roll the master is given an "action token". When an action fails, the turn goes to the DM, that can do as many "actions" as they have "tokens". When the DM runs out of action tokens, the turn goes back to the players.
+
+This keeps the flow of the game smooth and naturally restrics longer turns, while also giving the players an option to keep their streak going at the cost of karma and hero dice. *Remember, 1 can only be recovered from for 5 karma!*
+
+### Spellcasting Boons or Banes
 
 Some items reduce the amount of dice a spellcaster has to roll to a minimum of one. This allows caster to recieve magic items that are not terribly overpowered while remaining effective. If rolling with bains, just roll more dice.
 
