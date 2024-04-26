@@ -25,13 +25,15 @@ EZD6 was love at first sight. The core advantages to me from *d20 roll-under + V
 
 * **Small Hitpoints** Most things die fast and easy, including PCs (player characters). While 
 * **No Leveling** Party is only as powerful as their items and profficiencies, the only way to enhance your characters is by doing what would be sensible. As far as I know, most tables rule with milestone[^what-is-milestone] leveling anyway, but this makes every upgrade althemore precious.
+* **Tofu** Most things have little flavour, so they are easier to bend to suit another setting.
 * **Universality** Roll `Nd6`, take highest or lowest, done. Most things are resolved like that. The only types of boosts one gain from their party members is rolling more dice, thereby increasing th chances of rolling a higher number.
+* **Rule Synergy** Since there are so few rules all of them feed into eachother, discussed further in [MDA Analys](#mda-analysis). 
 * **No "Gaming The System"** The system is very small and relies heavily on player-to-dm trust. I think that said trust should de facto be on the table in any game, but the light weight ensures munchkins and minmaxers don't win over by a technicality.
 * **No Mental Maths** I like maths problems and puzzles. I hate mental maths. Haven't met a single person that enjoys it, all the less the chance that they'll play in my game.
 
-On the other hand, the system has it's issues.
+On the other hand, the system has it's issues for some player groups.
 
-* **No Numbers** 
+* **No Numbers** Spells don't have levels, items don't have weight, attacks don't call for damage dice. It's not for detailed and intricate strategic combat.
 
 ## MDA Analysis
 
@@ -47,27 +49,57 @@ Players can alter the result of their rolls by getting contributing their karma.
 
 Karma points allow players with bad roll streaks to come back. Getting bad dice rolls can be viewed as punishment for playing the games. Compensatory mechanics like this give players some control over the inherent output[^output-randomness] randomness.
 
+Alternatively, if a player rolls a on ethey may use their Hero Dice. They dice can be used to reroll *any* failure. 5 karma can be converted into a hero dice at any moment, but there can supposedly be only one at a time[^one-hero-dice]. 
+
 ## Machinations Analysis
 
 Machinations is a framework that focuses on describing a game as a combinations of feed-back loop and resource conversion processes.
 
 However, the only process governed by rules that can be viewed as a resource transaction is raw combat, so this chapter will focus on the out-of-the-box combat mechanics.
 
-The formal resources by rules of EZD6 are *Karma*, *Hero Die*, *Hitpoints* of the PCs and the Bag Guys, *Boons*/*Banes*.
+The formal resources by rules of EZD6 are *Karma*, *Hero Die*, *Hitpoints* of the PCs and the Bag Guys, *Boons*/*Banes*. This yields interesting relationships.
 
-## House Rules
+## House Rules 
 
 ### Blaze Of Glory
 
+Named after a similar rule in [Daggerheart](https://daggerheart.org/rules).
+
 Upon death, a character may wish to do a final action, they are granted a maximum degree of success. If the action is casting a spell, they may cast any spell with the power level equal to their `karma + 1`.
 
-Named after a similar rule in [Daggerheart](https://daggerheart.org/rules).
+### Fussy Focus
+
+Taken from this [youtube video](https://youtu.be/bZheDgXE5F0?si=SQn_aUCAbRTxHxZJ).
+
+A caster can only cast spells when specific requirements are met. The environment has to contain some specific features, such as the ones listed below. The more prominent, the stronger the spell can be cast.
+
+* **Shadow Focus** Old shadow, the older - the better. Fresh one-hour shadow for a weak spell, a century old mountain's cover for a strong one.
+
+* **Lit Focus** Direct light. A meager candle can be enough for a small cantrip, but a bonfire or heavenly rays required for strong casting.
+
+* **Death Focus** Corpses, meat and bones. The more deathly the place, the better, works amazingly well for graveyards. *Although it can seem applicable best to necromancers, I assure you that's not what you want. If they find a single graveyard, the game is doomed.*
+
+* **Fire Focus** Be in or on fire. The more fire, the merrier.
+
+You may decide to take one of the focuses from above or negotiate a custom one with me.
+
+Notice, that they don't guarantee a successful cast, they only *allow* an opportunity. A shadow focus wizard casting a resurrection spell in the middle of an open daylit field is not possible.
+
+## Other Mechanics
+
+### Casting Boons / Banes
+
+Some items reduce the amount of dice a spellcaster has to roll to a minimum of one. This allows caster to recieve magic items that are not terribly overpowered while remaining effective. If rolling with bains, just roll more dice.
+
+I once ruled that a boon allowed the caster to reroll a one, that was completely off-balance. If you know, you know. 
 
 ## Licensing & Usage
 
-EZD6 is distributed under 
+EZD6 is distributed under the Open Game License. The restated rules from other places are distributed under their respective licenses.
 
 ![Open EZD6 Logo](open-ezd6-logo-color.png)
 
 [^mda]: ["Formal Approach to Game Design and Game Research"](https://users.cs.northwestern.edu/~hunicke/MDA.pdf) by Robin Hunicke, Marc LeBlanc, Robert Zubek
 [^output-randomness]: ["3 Minute Game Design: Episode 6 - Output Randomness"](https://www.youtube.com/watch?v=2qfFEP_-LkI) by Keith Burgun Games
+[^one-hero-dice]: ...*technically*, you can have more. There is rarely a need to be able to carry more than one at a time, so this is not as much a limitation, as much as just an edgecase that doesn't happen. There is not insentive for players to hoard them.
+[^milestone]: Party levels up whenever the master says they level up. As opposed to leveling based on experience points. Usually preferred, since allows a finer control over character growth.
