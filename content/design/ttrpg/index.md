@@ -85,8 +85,6 @@ You may decide to take one of the focuses from above or negotiate a custom one w
 
 Notice, that they don't guarantee a successful cast, they only *allow* an opportunity. A shadow focus wizard casting a resurrection spell in the middle of an open daylit field is not possible.
 
-## Other Mechanics
-
 ### Daggerheart's Turn Dynamic
 
 Players go in whatever order they choose. Unless surprised, the players always go first. Players keep doing actions on their turn until they fail a roll. For every roll the master is given an "action token". When an action fails, the turn goes to the DM, that can do as many "actions" as they have "tokens". When the DM runs out of action tokens, the turn goes back to the players.
