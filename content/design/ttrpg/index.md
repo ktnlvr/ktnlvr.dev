@@ -97,6 +97,12 @@ Some items reduce the amount of dice a spellcaster has to roll to a minimum of o
 
 I once ruled that a boon allowed the caster to reroll a one, that was completely off-balance. If you know, you know. 
 
+### Cold Shot
+
+This rule was retold to me many times for D&D, but my version is suited for EZD6.
+
+A player may try and attack a specific part of a creature. They may only do that if the boons on the roll outweigh the banes. When doing this attack you get +2 bane. A successful attack deals double damage or invokes a specific effect otherwise.
+
 ## Licensing & Usage
 
 EZD6 is distributed under the Open Game License. The restated rules from other places are distributed under their respective licenses.
