@@ -7,6 +7,7 @@ draft: true
 unlisted: true
 iframe: ezd6_rule_reference_v1.0.3.pdf
 favicon: ezd6.ico
+image: open-ezd6-logo-color.png
 ---
 
 ## Preface
@@ -102,6 +103,13 @@ I once ruled that a boon allowed the caster to reroll a one, that was completely
 This rule was retold to me many times for D&D, but my version is suited for EZD6.
 
 A player may try and attack a specific part of a creature. They may only do that if the boons on the roll outweigh the banes. When doing this attack you get +2 bane. A successful attack deals double damage or invokes a specific effect otherwise.
+
+### Focus Tracking
+
+Coming from Wildsea Free Edition p119. Not as much a rule, as much a DM trick.
+
+Since the turn order between players is flexible it is important to give everyone a chance to shine. Have a small list with each player's name and write down a tick for every action they did. This serves as a clear visual indication to how often players act. If one player is not acting nearly as much as everyone else, hit them up with something unexpected.
+
 
 ## Licensing & Usage
 

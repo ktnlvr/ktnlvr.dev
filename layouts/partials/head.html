@@ -20,7 +20,7 @@
     <link rel="icon" href="{{ .Resources.GetMatch .Params.Favicon }}">
 {{ else }}
     <link rel="shortcut icon" href="{{.Site.BaseURL}}favicon.ico">
-{{ end}}
+{{ end }}
 <meta name="description"
     content="{{if .Description}}{{.Description | truncate 60 }}{{else if .Summary}}{{.Summary | truncate 60 }}{{else}}{{.Content | truncate 60}}{{end}}" />
 <meta property="og:description"
@@ -28,4 +28,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{.Permalink}}">
 <meta property="og:title" content="{{.Title}}" />
+{{ if .Params.Image }}
+<meta property="og:image" content="{{.Params.Image}}"/>
+{{ else }}
 <meta property="og:image" content="{{.Site.BaseURL}}pfp.png"/>
+{{ end }}
