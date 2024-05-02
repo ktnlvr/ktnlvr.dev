@@ -9,7 +9,7 @@ link: https://github.com/ktnlvr/dotfiles
 
 ## What are dotfiles?
 
-"Dotfiles" is a general name used to refer to configurations and system setting. It comes from the fact that most of them are hidden files prefixed with a dot, hence the name. This is a config
+"Dotfiles" is a general name used to refer to configurations and system setting. It comes from the fact that most of them are hidden files prefixed with a dot, hence the name. Managing them is always ~~a pain~~ an adventure. 
 
 ## What does it solve?
 
@@ -23,7 +23,9 @@ Symlinks are a natural choice, but how would one organize and automate them? Whe
 
 ## How does it work?
 
-By using GNU `stow`[^stow] it automates the symlink generation. `stow` is simple: when ran in a directory, it creates symlinks to all files inside it in the parent directory, bingo! Maybe it is easier to see with an example, imagine the following `$HOME` directory:
+Symlink targets live in a separate folder that mimics the structure of `$HOME`. All required files are symlinked from the actual `$HOME` into this directory.
+
+GNU `stow`[^stow] automates the symlink generation. `stow` is simple: when ran in a directory, it creates symlinks to all files inside it in the parent directory. Imagine the following `$HOME` directory:
 
 ```
 -- The actual configs
@@ -58,9 +60,9 @@ Before running it will check that both required dependencies are installed (`sto
 
 One could possibly worry that stow will override their existing configurations. Luckily, when ran with the `--adopt` option, all the configuration files that already exist will be copied into the `.dotfiles` directory overriding the downloaded config. This flag is the only destructivee one, since if you don't have your downloaded configs in a git repo, the changes will be lost. Be careful!
 
-In case some of the files are already symlinked, `stow` will issue a warning for each and not procede.
+In case some of the files are already existent in the place of symlinks, `stow` will issue a warning for each and not procede.
 
-A defensive measure I put in is updates. If someone installs the `.dotfiles` directory if it already exists, the changes are pulled and then applied.
+One defensive measure is updating instead of reinstalling. If someone tries to install my dotfiles, instead of reapplying the installation the script simply pulls the latest version from the main branch.
 
 Otherwise, if something goes very wrong all commands have early exits. It won't try and `stow` a non-existent directory. Generally, the script is rather safe.
 
