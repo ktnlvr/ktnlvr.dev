@@ -129,3 +129,7 @@ code {
     font-optical-sizing: auto;
     font-style: normal;
 }
+
+#TableOfContents {
+    font-size: 80%;
+}
