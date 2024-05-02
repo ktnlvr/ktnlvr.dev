@@ -12,7 +12,7 @@ image: open-ezd6-logo-color.png
 
 ## Preface
 
-If you are a player loooking to play with me, skip to the only section of interest to you: [House Rules](#house-rules).
+If you are a player loooking to play with me, skip to the only section of interest to you: [House Rules](#house-rules). This post expects basic TTRPG literacy and familiarity with design tropes. Personal experience is preferable.
 
 If you are looking at my game design skills, keep reading.
 
@@ -36,13 +36,21 @@ On the other hand, the system has it's issues for some player groups.
 
 * **No Numbers** Spells don't have levels, items don't have weight, attacks don't call for damage dice. It's not for detailed and intricate strategic combat.
 
+## Why are light rules important?
+
+They prevent designing around it. One prime example for me are unbalanced encounters, often resulting in an *unexpected TPK (total party kill)*. Here, *unexpected* meaning not arising from the world the game is set in and players' underestimating a monster's power, but from the DM failing to estimate the danger within the system. *Not the game world, the system.*
+
+This comes with a presupposition the DM is supposed to juggle the system's parameters in just the right way to not destroy all players at once. Balancing shifts from an issue of tailoring the game for the players, to marrying your critical path to the game's frame. This is the process I want to avoid. 
+
+The allure of rules can be charming. I like putting on my *system designer's* hat. One reason for me to put it on is the electrically synergistic design of *karma*, *rolls* and *boons*. 
+
 ## MDA Analysis
 
 MDA[^mda] stands for Mechanics-Dynamics-Aesthetics, a framework used for analyzing games in terms of how mechanics encourage players to act in a certain way to manifest an emotion.
 
 Mechanically, the game has 3 constituents: checks, attacks and casts. 
 
-The **checks** require the player to roll a d6. They roll an extra one for each boon and pick the highest or add extra dice for each bane and pick the lowest. A 6 always succeeds, a 1 always fails.
+The **checks** require the player to roll a D6. They roll an extra one for each boon and pick the highest or add extra dice for each bane and pick the lowest. A 6 always succeeds, a 1 always fails.
 
 Usually, the boons and banes are distributed by the DM, hence the players don't really have control over this. However, the players can help eachother out by incuring a boon on someone else's roll if they have the skills. A scribe might help a warrior decypher a scroll. The ability to gift a bonus to another player *for free* intensifies cooperations and allows playres to collaborate better.
 
@@ -50,15 +58,7 @@ Players can alter the result of their rolls by getting contributing their karma.
 
 Karma points allow players with bad roll streaks to come back. Getting bad dice rolls can be viewed as punishment for playing the games. Compensatory mechanics like this give players some control over the inherent output[^output-randomness] randomness.
 
-Alternatively, if a player rolls a on ethey may use their Hero Dice. They dice can be used to reroll *any* failure. 5 karma can be converted into a hero dice at any moment, but there can supposedly be only one at a time[^one-hero-dice]. 
-
-## Machinations Analysis
-
-Machinations is a framework that focuses on describing a game as a combinations of feed-back loop and resource conversion processes.
-
-However, the only process governed by rules that can be viewed as a resource transaction is raw combat, so this chapter will focus on the out-of-the-box combat mechanics.
-
-The formal resources by rules of EZD6 are *Karma*, *Hero Die*, *Hitpoints* of the PCs and the Bag Guys, *Boons*/*Banes*. This yields interesting relationships.
+Alternatively, if a player rolls a on ethey may use their Hero Dice. They dice can be used to reroll *any* failure. 5 karma can be converted into a hero dice at any moment, but there can supposedly be only one at a time[^one-hero-dice].
 
 ## House Rules 
 
@@ -110,6 +110,17 @@ Coming from Wildsea Free Edition p119. Not as much a rule, as much a DM trick.
 
 Since the turn order between players is flexible it is important to give everyone a chance to shine. Have a small list with each player's name and write down a tick for every action they did. This serves as a clear visual indication to how often players act. If one player is not acting nearly as much as everyone else, hit them up with something unexpected.
 
+### Intended failure
+
+You may choose to fail a roll, vocally or privately.
+
+### When To Roll
+
+I only allow rolls when there is a clear goal in mind. 
+
+This is sometimes an issue in, for instance, DnD. When a player decides to roll 'Insight' or 'Athletics' or anything. Sure, with insight you can be sure they are trying to detect deception, but any other roll should have a goal in mind.
+
+Also, please don't roll unless you are asked to. That's just rude.
 
 ## Licensing & Usage
 
