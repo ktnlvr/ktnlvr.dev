@@ -5,7 +5,6 @@ brief: "my ttrpg houseruled system based on ezd6"
 draft: true
 
 unlisted: true
-iframe: ezd6_rule_reference_v1.0.3.pdf
 favicon: ezd6.ico
 image: open-ezd6-logo-color.png
 ---
