@@ -19,7 +19,7 @@ If you are looking at my game design skills, keep reading.
 
 I have been playing TTRPGs as long as I remember myself, so designing my own system was a question of not *if* but *when*.
 
-Having spent enough time in the shoes of DnD5e/Pathfinder 2 Warlocks, Barbarians and Sorcerers I decided to explore what else the world has to offer. My bane is that I often play with new players that have not explored the possibility space of role-playing game to any extent. Thus, fast onboarding is crucial.
+Having spent enough time in the shoes of D&D5e/Pathfinder 2 Warlocks, Barbarians and Sorcerers I decided to explore what else the world has to offer. My bane is that I often play with new players that have not explored the possibility space of role-playing game to any extent. Thus, fast onboarding is crucial.
 
 EZD6 was love at first sight. The core advantages to me from *d20 roll-under + Vancian Magic + 50 years of cultural legacy* are as follows:
 
@@ -117,7 +117,7 @@ You may choose to fail a roll, vocally or privately.
 
 I only allow rolls when there is a clear goal in mind. 
 
-This is sometimes an issue in, for instance, DnD. When a player decides to roll 'Insight' or 'Athletics' or anything. Sure, with insight you can be sure they are trying to detect deception, but any other roll should have a goal in mind.
+This is sometimes an issue in, for instance, D&D. When a player decides to roll 'Insight' or 'Athletics' or anything. Sure, with insight you can be sure they are trying to detect deception, but any other roll should have a goal in mind.
 
 Also, please don't roll unless you are asked to. That's just rude.
 
