@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/latin-modern-math');
 
 :root {
     --text-color: #0B0C0D;
@@ -135,4 +136,8 @@ pre {
 
 #TableOfContents {
     font-size: 80%;
+}
+
+math {
+    font-family: 'Latin Modern Math', sans-serif;
 }
