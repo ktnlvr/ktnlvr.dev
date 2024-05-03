@@ -1,9 +1,9 @@
 {{define "main"}}
 <header><h1>ERR 404.</h1></header>
 <p>page not found, better luck next time. <a href="/">home?</a></p>
-
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
+<img src="{{.Site.BaseURL}}cat.jpg">
 <div id="search"></div>
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
