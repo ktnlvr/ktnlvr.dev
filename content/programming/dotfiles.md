@@ -66,5 +66,18 @@ One defensive measure is updating instead of reinstalling. If someone tries to i
 
 Otherwise, if something goes very wrong all commands have early exits. It won't try and `stow` a non-existent directory. Generally, the script is rather safe.
 
+## What did you try?
+
+**NixOS.** Yeah, no. The language got in the way too much. I couldn't get used to the syntax. Setting up a quick environment felt like a chore. Maybe I'm just too dense for the PhD-induced greatness. Rolling it to 1000+ auto-scaling production machines can be a valid usecase. Managing my laptop was not.
+
+## When does it fail?
+
+Managing system configs is something I am yet to discover how to properly do. I like using `doas`, but every time I set up a new machine I have to edit the `doas.conf` and I add a plain `permit kitten as root`. 
+
+Installing software is also outside the scope of the dotfiles. I love it when I can run a script and roll out a fresh battle-ready system. Sometimes that also includes installing the right software.
+
+A trivial solution might be having a pythonic `requirements.txt` with all the packages I'll ever want. Though some of them are missing on different distributions[^debian-nvim-missing]. If I go distro hopping again, I'll to manage that. Versioning the packages is also a pain.
+
 [^stow]: [GNU `stow`](https://www.gnu.org/software/stow/) "a symlink farm manager" (whatever that is) 
 [^stow-safe]: "substantially simpler and safer", "stow will never delete any files, directories, or links", source: [`man`](https://linux.die.net/man/8/stow)
+[^debian-nvim-missing]: The [Inky Editor](https://github.com/inkle/inky) is packaged in [AUR](https://aur.archlinux.org/packages/inky) for Arch but is entirely missing on Debian.
