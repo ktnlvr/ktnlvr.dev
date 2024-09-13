@@ -1,5 +1,6 @@
 ---
 title: ktnlvr.dev
+url: /kldd
 draft: true
 
 unlisted: true

@@ -1,5 +1,6 @@
 ---
 title: "dotfiles"
+url: df
 date: 2024-04-21T19:55:27.205+0300
 draft: true
 

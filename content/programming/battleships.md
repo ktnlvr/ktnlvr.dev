@@ -1,5 +1,6 @@
 +++
 title = "battleships"
+url = "/bs"
 brief = "simple prediction engine for \"battleships\" the game" 
 draft = false
 iframe = "https://battleships.ktnlvr.dev"
