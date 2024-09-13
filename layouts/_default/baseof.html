@@ -5,9 +5,10 @@
     {{partial "head.html" .}}
 </head>
 <body>
-    {{block "main" . }}
+    {{partial "breadcrumbs.html" .}}
+    {{block "main" .}}
     {{end}}
-    {{block "footer" . }}
+    {{block "footer" .}}
     {{partial "footer.html" .}}
     {{end}}
 </body>
