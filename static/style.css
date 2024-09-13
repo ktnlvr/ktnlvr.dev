@@ -141,3 +141,7 @@ pre {
 math {
     font-family: 'Latin Modern Math', sans-serif;
 }
+
+blockquote {
+    font-style: italic;
+}
