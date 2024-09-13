@@ -35,6 +35,10 @@ Thirdly, the maths is not visible in the dev environment. When running a hot-rel
 
 On the other hand, getting LaTeX to work on a hugo website *statically* is troublesome. Humble brag? Defo.[^hugo-maths-official]
 
+### Short links
+
+All the posts have a slug consisting of the first letters making up the title of the post. This is done to ease recall and make links look less visually overwhelming, while keeping them sensible.
+
 ### `<noscript/>`
 
 I don't see the purpose of JavaScript for a blog. The content here is static by nature and is intended to be read more often than edited
