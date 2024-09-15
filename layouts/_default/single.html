@@ -7,7 +7,9 @@
         {{if .Params.Link}}
         </a>
         {{end}}
-    
+        {{if .Params.Unlisted}}
+        (unlisted)
+        {{end}}
     </h1>
     <p class="epigraph">{{.Params.Brief | transform.Markdownify}}</p>
     <div class="frontmatter">
