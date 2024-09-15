@@ -165,3 +165,7 @@ math {
 blockquote {
     font-style: italic;
 }
+
+table {
+    font-family: 'JetBrains Mono', monospace;
+}
