@@ -12,6 +12,9 @@
         {{end}}
     </h1>
     <p class="epigraph">{{.Params.Brief | transform.Markdownify}}</p>
+    {{if .Params.Iframe}}
+    <iframe src={{.Params.Iframe}}></iframe>
+    {{end}}
     <div class="frontmatter">
         <div>{{ .TableOfContents }}</div>
         <div>
@@ -24,7 +27,4 @@
     <main data-pagefind-body>
         {{.Content}}
     </main>
-    {{if .Params.Iframe}}
-    <iframe src={{.Params.Iframe}}></iframe>
-    {{end}}
 {{end}}
