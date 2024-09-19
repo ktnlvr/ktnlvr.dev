@@ -2,7 +2,7 @@
 title: "ezd6"
 url: /ezd6
 date: 2024-04-24T17:22:30.531+0300
-brief: "analysis of ezd6 and my houseruled extensions to it" 
+brief: "analysis of ezd6 and my homebrew extensions to it" 
 draft: true
 
 favicon: ezd6.ico
@@ -37,7 +37,7 @@ On the other hand, the system has it's an issue for some player groups.
 
 ## Why are light rules important?
 
-They prevent designing around it. One prime example for me are unbalanced encounters, often resulting in an *unexpected TPK (total party kill)*. Here, *unexpected* meaning not arising from the world the game is set in and players' underestimating a monster's power, but from the DM failing to estimate the danger within the system. *Not the game world, the system.*
+They prevent designing around it. One prime example for me are unbalanced encounters, often resulting in an *unexpected TPK (total party kill)*. Here, *unexpected* meaning not arising from the world the game is set in and players' underestimating a monster's power, but from the DM failing to estimate the danger within the system. *Not within the game world, within the system.*
 
 This comes with a presupposition the DM is supposed to juggle the system's parameters in just the right way to not destroy all players at once. Balancing shifts from an issue of tailoring the game for the players, to marrying your critical path to the game's frame. This is the process I want to avoid. 
 
@@ -69,19 +69,27 @@ This allows each player to feel powerful in their own vein and not underpower in
 
 ### Karma
 
-Players can alter the result of their rolls by getting contributing their karma. Karma can be used to boost any roll but a one. What's more interesting, is that players get karma by **failing rolls**. A roll is failed when the value of a roll is lower than a DM-specified threshold. When a roll is failed, the character gets 1 karma point. This balancing mechanic is to me the most brilliant part of the design.
+Karma is the system currency given for failing a roll or dished out as a bonus from the DM. It allows players to boost the value of any roll (except a 1) any amount of times.
 
-Karma points allow players with bad roll streaks to come back. Getting bad dice rolls in other systems can be viewed as punishment for playing the games. Compensatory mechanics like this give players some control over the inherent output[^output-randomness] randomness.
+Each time a *check* is failed the failer gets one *karma*. Karma points allow players with bad roll streaks to come back. Getting bad dice rolls in other systems can be viewed as punishment for playing the game as intended. Compensatory mechanics like this give players some control over the inherent output[^output-randomness] randomness.
 
-Alternatively, if a player rolls a on ethey may use their Hero Dice. They dice can be used to reroll *any* failure. 5 karma can be converted into a hero dice at any moment, but there can supposedly be only one at a time[^one-hero-dice].
+This gives players courage they need to start acting. Failing a roll in the moment means that some time later you can secure that all-important gut-whirling check.
 
-## House Rules 
+### Hero Dice
+
+Alternatively, if a player rolls a on ethey may use their Hero Dice. They dice can be used to reroll *any* failure. 5 karma can be converted into a hero dice at any moment[^karma-6], but there can supposedly be only one at a time[^one-hero-dice].
+
+## House Rules
+
+At my table we added a couple of mechanics atop the main game. Since the base system is so barebones, bringing our favourite rules from other systems seemed like an obvious choice.
 
 ### Blaze Of Glory
 
 Named after a similar rule in [Daggerheart](https://daggerheart.org/rules).
 
 Upon death, a character may wish to do a final action, they are granted a maximum degree of success. If the action is casting a spell, they may cast any spell with the power level equal to their `karma + 1`.
+
+The death of a character is a very dangerous event to the story, especially in plotless genres like TTRPG. It is an important to everyone at the table, so it only makes sense to shift focus to it as the highlight.
 
 ### Fussy Focus
 
@@ -148,3 +156,4 @@ EZD6 is distributed under the Open Game License. The restated rules from other p
 [^one-hero-dice]: ...*technically*, you can have more. There is rarely a need to be able to carry more than one at a time, so this is not as much a limitation, as much as just an edgecase that doesn't happen. There is not insentive for players to hoard them.
 [^milestone]: Party levels up whenever the master says they level up. As opposed to leveling based on experience points. Usually preferred, since allows a finer control over character growth.
 [^nat-20]: Natural twenties in D&D are very rewarding. Even though by the 5E book the automatic success always happens on an attack roll, basically every DM out there rules them as a universal success.
+[^karma-6]: At my table we agreed that one *hero dice* costs 6 karma. This is done solely to ease tallying. I didn't have any small tokens at home, so we counted it using spare d6s.
