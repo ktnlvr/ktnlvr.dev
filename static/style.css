@@ -169,3 +169,7 @@ blockquote {
 table {
     font-family: 'JetBrains Mono', monospace;
 }
+
+.footnote-backref {
+    text-decoration: none;
+}
