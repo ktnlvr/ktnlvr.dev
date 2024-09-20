@@ -18,7 +18,12 @@
     <div class="frontmatter">
         <div>{{ .TableOfContents }}</div>
         <div>
-            published {{.Params.Date.Format "January 2, 2006"}}.<br>
+            {{ if .Params.Date }}
+            started {{.Params.Date.Format "January 2, 2006"}}.<br>
+            {{ end }}
+            {{ if .Params.PublishedDate }}
+            published {{.Params.PublishedDate.Format "January 2, 2006"}}.<br>
+            {{ end }}
             modified {{.Lastmod | time.Format "January 2, 2006"}}.<br>
             {{ .WordCount }} words.
             ~{{ .ReadingTime }} minutes to read.
