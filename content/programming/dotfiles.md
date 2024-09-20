@@ -2,7 +2,7 @@
 title: "dotfiles"
 url: df
 date: 2024-04-21T19:55:27.205+0300
-draft: true
+publishDate: 2024-09-20T13:05:27.193+0300
 
 brief: "my mayhem of system & software configs" 
 link: https://github.com/ktnlvr/dotfiles
@@ -78,6 +78,10 @@ Managing system configs is something I am yet to discover how to properly do. I 
 Installing software is also outside the scope of the dotfiles. I love it when I can run a script and roll out a fresh battle-ready system. Sometimes that also includes installing the right software.
 
 A trivial solution might be having a pythonic `requirements.txt` with all the packages I'll ever want. Though some of them are missing on different distributions[^debian-nvim-missing]. If I go distro hopping again, I'll to manage that. Versioning the packages is also a pain.
+
+## So, what gives?
+
+Not sure. Try it if you need to roll out a system fast. Or want to test my workflow.
 
 [^stow]: [GNU `stow`](https://www.gnu.org/software/stow/) "a symlink farm manager" (whatever that is) 
 [^stow-safe]: "substantially simpler and safer", "stow will never delete any files, directories, or links", source: [`man`](https://linux.die.net/man/8/stow)
