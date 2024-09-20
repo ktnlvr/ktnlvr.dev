@@ -34,6 +34,7 @@
         <noscript>
             <p>noscript? <a href="{{.Site.BaseURL}}programming/ktnlvr.dev/#noscript">i respect that.</a></p>
         </noscript>
+        {{- partial "content-list.html" .Site.RegularPages -}}
     </main>
     {{- partial "footer.html" . -}}
 </body>
