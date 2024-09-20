@@ -21,10 +21,15 @@
             {{ if .Params.Date }}
             started {{.Params.Date.Format "January 2, 2006"}}.<br>
             {{ end }}
-            {{ if .Params.PublishedDate }}
-            published {{.Params.PublishedDate.Format "January 2, 2006"}}.<br>
+            {{ if .Params.PublishDate }}
+            published {{.Params.PublishDate.Format "January 2, 2006"}}.<br>
             {{ end }}
+            {{ if ne (.Lastmod.Format "January 2, 2006") 
+                (.Params.PublishDate.Format "January 2, 2006") 
+                (.Params.Date.Format "January 2, 2006")
+            }}
             modified {{.Lastmod | time.Format "January 2, 2006"}}.<br>
+            {{ end }}
             {{ .WordCount }} words.
             ~{{ .ReadingTime }} minutes to read.
         </div>
