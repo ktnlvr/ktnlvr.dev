@@ -1,5 +1,6 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">
-    <a class="anchor" href="{{.Page.Permalink}}#{{ .Anchor | safeURL }}">
+    <span>
+        <a class="anchor" href="{{.Page.Permalink}}#{{ .Anchor | safeURL }}">§</a>
         {{ .Text | safeHTML }}
-    </a>
+    </span>
 </h{{ .Level }}>
