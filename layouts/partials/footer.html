@@ -12,6 +12,6 @@
         <a href="/">root</a>.
     {{end}}
     {{ if .PublishDate }}
-    <a href="https://github.com/ktnlvr/ktnlvr.github.io/commit/{{.GitInfo.Hash}}"><code>{{.GitInfo.AbbreviatedHash}}</code></a>.
+    <a href="https://github.com/ktnlvr/ktnlvr.github.io/commit/{{.GitInfo.Hash}}" title="{{.GitInfo.Subject}}"><code>{{.GitInfo.AbbreviatedHash}}</code></a>.
     {{ end }}
 </footer>
