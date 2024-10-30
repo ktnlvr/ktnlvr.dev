@@ -185,7 +185,62 @@ This type of trick is *impossible* to encode in any modern statically typed lang
 
 ### SymPy
 
-[SymPy](https://sympy.org) is a symbolic mathematics library written entirely in Python. it supports everything from basic algebra to calculus and linear algebra, as well as (with some extension) a plethora of [other](https://github.com/bjodah/chempy "Chemistry") [research](https://galgebra.readthedocs.io "Geometric Algebra") [areas](https://lcapy.readthedocs.io/ "Linear... circuit? I'm not even sure what that is").
+[SymPy](https://sympy.org) is a symbolic mathematics library written entirely in Python. it supports everything from basic algebra to calculus and linear algebra, as well as (with some extension) a plethora of [other](https://github.com/bjodah/chempy "Chemistry") [research](https://galgebra.readthedocs.io "Geometric Algebra") [areas](https://lcapy.readthedocs.io/ "Linear... circuit analysis? I'm not even sure what that is").
+
+```
+>>> from sympy import symbols, sin, cos, pi
+>>> x, y, z = symbols("x, y, z")
+>>> expr = cos(x) + sin(y)
+>>> expr.subs(cos(x), y)
+z + sin(y)
+>>> expr.subs(x, 0).subs(y, pi / 2)
+2
+```
+
+Wonderful stuff. However, pay close attention to the `symbols(...)` call. Doesn't it seem cumbersome to you? Wouldn't it be wonderful to do something like...
+
+```
+>>> from sympy.abc import x, y, z
+```
+
+Well, behold! You can already do that, the [`abc`](https://docs.sympy.org/latest/modules/abc.html) module is specifically designed to do that, it houses all the usual variables you could need.
+
+One possible issue is that variables under the same name might get mixed up, for instance if we have a parabola and hooke's law meet in the same expression they might get mixed up:
+
+```
+# hooke.py
+from sympy.abc import x, k
+F = -k * x
+
+# parabola.py
+from sympy.abc import x
+y = x**2 - x - 1
+
+
+>>> from hooke import F, x as hookes_x, k
+>>> from parabola import y, x as pararbola_x
+
+# as expected, the x refers to the same object
+>>> hookes_x is parabola_x
+True
+
+# J will be our placeholder to see all the substituted locations
+>> from sympy.abc import J
+
+# work = force * displacement
+>>> W = F * y
+>>> W
+(-k*x) * (x**2 - x - 1)
+
+>>> W.subs(hookes_x, J)
+(-J*k) * (J**2 - J - 1)
+```
+
+Oh no! Two variables that were irrelevant got mixed up! Notice how importing them from appropriate modules didn't change anything. To be fair, the same issue could arise on sheet of paper. After all, you are using the same symbol to mean two different things.
+
+In their "[Best Practices](https://docs.sympy.org/latest/explanation/best-practices.html)" section SymPy themselves recommend using the aforementioned `symbols` function to define symbols:
+
+> Define symbols with [`symbols()`](https://docs.sympy.org/latest/modules/core.html#sympy.core.symbol.symbols) or [`Symbol()`](https://docs.sympy.org/latest/modules/core.html#sympy.core.symbol.Symbol). The `symbols()` function is the most convenient way to create symbols. It supports creating one or more symbols at once. ([source](https://docs.sympy.org/latest/explanation/best-practices.html#defining-symbols))
 
 
 ### Pint
