@@ -19,7 +19,7 @@ This is a static website with a single CSS and no JS files. Can probably run usi
 
 ### MathML
 
-Some features might undergo unnoticed unless pointed out specifically.
+Some features might go unnoticed unless pointed out specifically.
 
 Getting maths to work with hugo was a difficult feat, but I did it:
 
@@ -48,5 +48,5 @@ Understandably, this philosophy is impossible apply all over the web. A website 
 The only place that actually has JavaScript is the [404 page](/this-page-does-not-exist). If you are going to a non-existent page you really need a search bar.
 
 [^iframe]: For instance, [batteleships](/programming/battleships).
-[^page-speed-insights]: [What does PageSpeed Insights have to say?](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fktnlvr.dev%2Fprogramming%2Fktnlvr.dev)
+[^page-speed-insights]: [What does PageSpeed Insights have to say?](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fktnlvr.dev%2Fprogramming%2Fktnlvr.dev). You can also scan it using [Unlighthouse](https://next.unlighthouse.dev/). Last time I checked, everything was in the green.
 [^hugo-maths-official]: [Hugo's docs](https://gohugo.io/content-management/mathematics/) suggest using a `<script>` tag, we can't have that.
