@@ -13,7 +13,7 @@ Everything good in dynamically typed programming languages are things, not yet w
 
 ## Introduction
 
-All the examples below will be in Python. I did my best to avoid verbose syntax and Python-specific semantics. One rule to keep in mind: *everything is an object*. This principle means that everything has members: methods and fields.
+All the examples below will be in Python[^python-3.7]. I did my best to avoid verbose syntax and Python-specific semantics. One rule to keep in mind: *everything is an object*. This principle means that everything has members: methods and fields.
 
 This includes everything that would be a primitive in other languages: `int`, `bool`, no one is safe!
 
@@ -29,7 +29,7 @@ This includes everything that would be a primitive in other languages: `int`, `b
 
 ### Dunder Methods
 
-If a method starts and ends with two underscores, it is called a dunder (**d**ouble **under**score) method. Dunder methods are reserved by the language to implement operator overloading, constructors and type coercion and other semantic-level fluff.
+If a method starts and ends with two underscores, it is called a dunder (**d**ouble **under**score) method. Dunder methods are reserved by the language to implement operator overloading[^operator-overloading], constructors and type coercion and other semantic-level fluff.
 
 ```
 class Vec2:
@@ -52,7 +52,6 @@ assert c.x == 2 + 8
 assert c.y == 3 + 9
 ```
 
-This type of overloading is very useful when it comes to representing mathematical objects. It can be argued that it's bad practice, since you never know how the underyling operation is used, but that is really only noticeable in severe cases like the `std::ostream::operator<<` in C++.
 
 One of the things that can be overloaded is member access. If the method `__getattr__` (get attribute) is defined, it will be called whenever an unset member is accessed. For instance, `x.y` is equivalent to using `x.__getattr__(y)` if no member `y` exists on the object `x`.
 
@@ -88,12 +87,12 @@ assert do.foo == 'bar'
 assert do.qua
 ```
 
-Make sure to understand what exactly is happening at every step in the snippet above. Since *everything is an object*, this method can be attached to anything!
+Make sure to understand what exactly is happening at every step in the snippet above. Since *everything is an object*, this method can be attached to anything! Notice, how the call to `self.dictionary` does not go through `__getattr__`, because the field is defined on the object in the constructor.
 
 This might seem like an awful idea. Usually, property access is an operation that doesn't mutate anything. It might feel like nothing is sacred anymore and you can't trust a single line of code. That is to some extent true, you can realistically even hide a full-on database call behind the `__getattr__`. However, being horryfing doesn't stop it from being useful. 
 
 Firstly, you can imagine the example above to be a good tool when dealing with JSON data. Sure, a typed model class is better, but it just always is. If that's your only point, go use a type-checked language. For everyone who stayed, 
-the class above was deemed useful enough to [be the standard library](https://docs.python.org/3/library/types.html#types.SimpleNamespace)!
+the class above was deemed useful enough to [be in the standard library](https://docs.python.org/3/library/types.html#types.SimpleNamespace)!
 
 Secondly, keep reading, let me cook.
 
@@ -154,6 +153,18 @@ Notice how `counter` is not imported from anywhere in particular, instead the im
 
 
 When `__getattr__(...)` is defined at module level, it gets attached to the module as a method upon import. Hence, it is possible to overwrite the attribute access in a module.
+
+```
+# attrprinter.py
+
+def __getattr__(self, value):
+    print(f"Access to {value}!")
+
+>>> from attrprinter import LionKing, alphabet, _
+Access to LionKing!
+Access to alphabet!
+Access to _!
+```
 
 
 ## Use Cases
@@ -242,14 +253,54 @@ In their "[Best Practices](https://docs.sympy.org/latest/explanation/best-practi
 
 > Define symbols with [`symbols()`](https://docs.sympy.org/latest/modules/core.html#sympy.core.symbol.symbols) or [`Symbol()`](https://docs.sympy.org/latest/modules/core.html#sympy.core.symbol.Symbol). The `symbols()` function is the most convenient way to create symbols. It supports creating one or more symbols at once. ([source](https://docs.sympy.org/latest/explanation/best-practices.html#defining-symbols))
 
+As of writing this, the implementation defines all the symbols inside `abc` [manually](https://github.com/sympy/sympy/blob/9f8a5d50c675a9a677f873180b1b067cff7ce4ba/sympy/abc.py#L64-L80). Beyond that, it also contains a note describing the easiest way *to avoid typos* in the variable names! I wish there was a way of avoiding that.
+
+``` 
+def __getattr__(self, var: str):
+    return Symbol(var)
+```
+
+The snippet above effectively cuts out circa 30% of the code in the file without breaking compatibility. Lovely, isn't it?
 
 ### Pint
 
-[Pint](https://pint.readthedocs.io/) brings units to Python. Meters, newtons, flicks[^no-really] - you can have them all!
+[Pint](https://pint.readthedocs.io/) brings units to Python. Meters, newtons, gigaparsecs per hertz - you can have them all!
 
 ### Express.js
 
 JS? I thought this post only uses Python.
+
+While I'm sure that this specific mechanism appears in some Python packages too, I don't know any specific examples of that. Besides, the syntax is rather transparent.
+
+```
+import express from 'express';
+import { createClient } from 'redis'; 
+
+let app = express();
+let db = createClient();
+```
+
+Woah! Or not, it may not jump at you the first time you look at this. Let me rewrite this one in Python.
+
+```
+import express
+from redis import create_client
+
+app = express()
+db = create_client()
+```
+
+Woah indeed! For `express` we are calling the module itself, instead of importing it like for `redis`. Queer. This is a bit different from overriding the attribute getter, but the magic words are almost the same. The Pythonic version would use the `__call__` dunder method. It defines the semantics of calling the object. *Everything is an object*, remember? Even functions.
+
+We can replicate this in terms of a classic web framework `Flask`. The code below simply proxies the call of the module to 
+
+```
+# flask.py
+__call__ = Flask
+
+>>> import flask
+>>> app = flask()
+```
 
 ## Conclusion
 
@@ -257,7 +308,8 @@ As I argued previously, this concept does not exist in the modern programming la
 
 *P.S. Actually, if you read this far and come up with a nicer name, send it to me and I'll change the article -- <artur.roos@ktnlvr.dev>.*
 
+[^python-3.7]: The specific version used is Python ≥ 3.7, since it is the earliest version that allows the sourcery that I'll be demonstrating.
+[^operator-overloading]: This type of overloading is very useful when it comes to representing mathematical objects. It can be argued that it's bad practice, since you never know how the underyling operation is used, but that is really only noticeable in severe cases like the [`std::ostream::operator<<`](https://en.cppreference.com/w/cpp/io/basic_ostream/operator_ltlt) in C++. 
 [^get-attr]: There are actually two dunder methods with similar functionality: `__getattr__` and `__getattribute__`. The former is invoked when looking up actual properties on an object failed. The latter is used to override the standard lookup.
 [^no-tags-defined]: Well, it defines a list of `EMPTY_ELEMENTS` for self-closing elements like `<br>` and `<img>`, but that information can not be derived from the property name alone.
-[^no-really]: Shoutout to `u/woodslug` and `u/JustMultiplyVectors` for posting [on reddit](https://www.reddit.com/r/Physics/comments/17zpzqg/what_are_some_of_the_most_cursed_units_youve_seen/) about the most cursed unit ever, the humble [flik](https://en.wikipedia.org/wiki/Flick_(physics)): `W/sr/m²/Hz`.
 [^codegolf]: Actually, this can be done even more compactly: `__getattr__ = HtmlTag`
