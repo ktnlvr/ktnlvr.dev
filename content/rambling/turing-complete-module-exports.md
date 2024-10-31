@@ -61,7 +61,7 @@ One of the things that can be overloaded is member access. If the method `__geta
 class DictionaryObject:
     # supply the dictionary in the constructor
     def __init__(self, dictionary: dict):
-        self._dictionary = dictionary
+        self.dictionary = dictionary
 
     # called when a member is accessed
     def __getattr__(self, value: str) -> str:
@@ -71,7 +71,7 @@ dictionary = {'foo': 'bar'}
 do = DictionaryObject(dictionary)
 
 # accessing a set property
->>> do._dictionary is dictionary
+>>> do.dictionary is dictionary
 True
 
 # accessing the value for 'foo'
@@ -103,7 +103,7 @@ Secondly, keep reading, let me cook.
 
 ### Pythonic Modules
 
-A Python module is a file containing definitions. All defined objects inside a module are given to it as properties. It's an object too after all!
+A Python module is a file containing definitions. All defined objects inside a module are given to it as methods. It's an object too after all!
 
 ```
 >>> import math
@@ -171,6 +171,7 @@ Access to alphabet!
 Access to _!
 ```
 
+The `__getattr__` is called for each item imported from the module, that's wonderful!
 
 ## Use Cases
 
@@ -178,7 +179,7 @@ It makes sense to see how that would work on a practical example. Luckily, a wil
 
 ### HTBuilder
 
-[HTBuilder](https://github.com/tvst/htbuilder) ("HT" for "Hyper Text") is a library of functions for declaratively constructing a string representation of an HTML DOM. Instead of listing all the possible tags, it just exports a factory function[^codegolf]:
+[HTBuilder](https://github.com/tvst/htbuilder) ("HT" for "Hyper Text") is a library of functions for declaratively constructing a string representation of an HTML DOM. You can already imagine how this will go.Instead of listing all the possible tags, it just exports a factory function:
 
 ```
 def __getattr__(tag):
@@ -195,9 +196,11 @@ This allows using the library as follows:
 '<b><i>Hello, world!</i></b>'
 ```
 
-None of the tags are defined in the file itself[^no-tags-defined], hence it comes with builtin support for all the HTML tags you could want.
+The tags don't have to be listed in the file[^no-tags-defined], hence it comes with builtin support for all the HTML tags you could want.
 
-This type of trick is *impossible* to encode in any modern statically typed language known to me. The semantics themselves are not too complicated, but treating modules as a *first class value* is not very popular.
+Going further, this type of usage in no way restricts
+
+This type of trick is *impossible* to encode in any modern statically typed language known to me. The semantics themselves are not too complicated, but treating modules as *first class values* is not very popular.
 
 ### SymPy
 
@@ -221,7 +224,7 @@ Wonderful stuff. However, pay close attention to the `symbols(...)` call. Doesn'
 
 Well, behold! You can already do that, the [`abc`](https://docs.sympy.org/latest/modules/abc.html) module is specifically designed to do that, it houses all the usual variables you could need.
 
-One possible issue is that variables under the same name might get mixed up, for instance if we have a parabola and hooke's law meet in the same expression they might get mixed up:
+One possible issue is that variables under the same name might get mixed up. For instance, if we have a parabola and hooke's law meet in the same expression we got problems:
 
 ```
 # hooke.py
@@ -236,7 +239,8 @@ y = x**2 - x - 1
 >>> from hooke import F, x as hookes_x, k
 >>> from parabola import y, x as pararbola_x
 
-# as expected, the x refers to the same object
+# different x refer to the same object
+# that can't be good
 >>> hookes_x is parabola_x
 True
 
@@ -269,12 +273,39 @@ The snippet above effectively cuts out circa 30% of the code in the file without
 
 ### Pint
 
-[Pint](https://pint.readthedocs.io/) brings units to Python. Meters, newtons, gigaparsecs per hertz - you can have them all!
+[Pint](https://pint.readthedocs.io/) brings units to Python. Meters, newtons, gigaparsecs per hertz - you can have them all! The definitions are loaded from a text file, which serves as a single source of truth for the unit conversion. It allows you to make all your computations unitful:
+
+```
+>>> import pint
+>>> ureg = pint.UnitRegistry()
+>>> 3 * ureg.meter + 4 * ureg.cm
+<Quantity(3.04, 'meter')>
+```
+
+Much like the aforementioned text file, the `UnitRegistry` is supposed to function as a single source of truth across the system. Unlike in the case with SymPy, we want all the exports of the same name to refer to the same value and the solution is basically already there.
+
+```
+# pint.py
+GLOBAL_REGISTRY = UnitRegistry()
+
+def __getattr__(self, unit):
+    if unit in GLOBAL_REGISTRY:
+        return GLOBAL_REGISTRY.__getattr__(unit)
+    else:
+        raise KeyError(...)
+
+>>> from pint import m, cm
+>>> 3 * m + 4 * cm
+<Quantity(3.04, 'meter')>
+```
+
+Hence the source of truth is shared across all possible imports of the module, including all the libraries. A global registry surely would've saved the [Mars Climate Orbiter](https://science.nasa.gov/mission/mars-climate-orbiter/).
 
 ### Express.js
 
 JS? I thought this post only uses Python.
 
+This example is a bit unusual compared to the previous ones, mainly because it uses a different dunder method.
 While I'm sure that this specific mechanism appears in some Python packages too, I don't know any specific examples of that. Besides, the syntax is rather transparent.
 
 ```
@@ -295,9 +326,9 @@ app = express()
 db = create_client()
 ```
 
-Woah indeed! For `express` we are calling the module itself, instead of importing it like for `redis`. Queer. This is a bit different from overriding the attribute getter, but the magic words are almost the same. The Pythonic version would use the `__call__` dunder method. It defines the semantics of calling the object. *Everything is an object*, remember? Even functions.
+Woah indeed! For `express` we are calling the module itself, instead of importing functions from it like for `redis`. Queer. This is a bit different from overriding the attribute getter, but the magic words are almost the same. The Pythonic version would use the `__call__` dunder method. It defines the semantics of calling the object. *Everything is an object*, remember? Even functions.
 
-We can replicate this in terms of a classic web framework `Flask`. The code below simply proxies the call of the module to 
+We can replicate this in terms of a classic web framework `Flask`. The code below simply proxies all the arguments to the module to 
 
 ```
 # flask.py
@@ -307,14 +338,68 @@ __call__ = Flask
 >>> app = flask()
 ```
 
+## Notes
+
+### Import All
+
+Python has a syntax for importing all items from a module. Most languages contain something similar and you can imagine how that is useful.
+
+```
+# dump all functions into the global scope
+from math import *
+```
+
+Understandably, using `__getattr__` primes an invisible footgun. How will it behave when importing everything? Surely the function itself will be re-exported and cause trouble. Luckily, this behaviour is far smarter than it looks.
+
+Since importing stuff from a module brings it into the scope, the imports of the imported module are brought along with it. As a result, using `import *` all over the place clutters the scope, hence it is discouraged.
+However, `__all__` is a variable that can hold the list of all items that should be actually imported when a wildcard is used.
+
+```
+# mega.py
+public = 1
+_private = 2
+
+__all__ = ['public']
+
+>>> from mega import *
+>>> public
+1
+>>> _private
+NameError: name 'x' is not defined
+```
+
+How do you think `__all__` is accessed? Using all the same `__getattr__`. If `__all__` is explicitly defined, `__getatrr__` will not be called for it. In the other case, the `__all__` will have to be returned by the `__getattr__`. For libraries like HTBuilder it is sensible to export common values like `span` and `div` respectively.
+
+```
+# htbuilder.py
+def __getattr__(self, tag):
+    return HtmlTag(tag)
+
+__all__ = ['span', 'div']
+
+>>> from htbuilder import *
+>>> hello = div(span("Hello, world!"))
+<htbuilder.HtmlElement object at 0x9ffb69420fadb0>
+>>> str(hello)
+'<div><span>Hello, world!</span></div>'
+>>> b(hello)
+NameError: name 'b' is not defined
+```
+
+### Package Versions
+
+
 ## Conclusion
 
 As I argued previously, this concept does not exist in the modern programming languages. Can we at least come up with a name for it? This concept is not even googleable.
 
 *P.S. Actually, if you read this far and come up with a nicer name, send it to me and I'll change the article -- <artur.roos@ktnlvr.dev>.*
 
+## Further reading
+
+`__getattribute__`
+
 [^python-3.7]: The specific version used is Python ≥ 3.7, since it is the earliest version that allows the sourcery that I'll be demonstrating.
 [^operator-overloading]: This type of overloading is very useful when it comes to representing mathematical objects. It can be argued that it's bad practice, since you never know how the underyling operation is used, but that is really only noticeable in severe cases like the [`std::ostream::operator<<`](https://en.cppreference.com/w/cpp/io/basic_ostream/operator_ltlt) in C++. 
 [^get-attr]: There are actually two dunder methods with similar functionality: `__getattr__` and `__getattribute__`. The former is invoked when looking up actual properties on an object failed. The latter is used to override the standard lookup.
-[^no-tags-defined]: Well, it defines a list of `EMPTY_ELEMENTS` for self-closing elements like `<br>` and `<img>`, but that information can not be derived from the property name alone.
-[^codegolf]: Actually, this can be done even more compactly: `__getattr__ = HtmlTag`
+[^no-tags-defined]: Well, it defines a list of `EMPTY_ELEMENTS` for self-closing elements like `<br>` and `<img>`, but they are basically exceptional.
