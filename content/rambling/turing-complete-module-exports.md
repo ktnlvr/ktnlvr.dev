@@ -48,12 +48,14 @@ a = Vec2(2, 3)
 b = Vec2(8, 9)
 c = a + b
 
-assert c.x == 2 + 8
-assert c.y == 3 + 9
+>>> c.x
+10
+>>> c.y
+12
 ```
 
 
-One of the things that can be overloaded is member access. If the method `__getattr__` (get attribute) is defined, it will be called whenever an unset member is accessed. For instance, `x.y` is equivalent to using `x.__getattr__(y)` if no member `y` exists on the object `x`.
+One of the things that can be overloaded is member access. If the method `__getattr__` (get attribute) is defined, it will be called whenever an *unset* member is accessed. For instance, `x.y` is equivalent to using `x.__getattr__(y)` if no member `y` exists on the object `x`.
 
 ```
 class DictionaryObject:
@@ -69,22 +71,25 @@ dictionary = {'foo': 'bar'}
 do = DictionaryObject(dictionary)
 
 # accessing a set property
-assert do._dictionary is dictionary
+>>> do._dictionary is dictionary
+True
 
 # accessing the value for 'foo'
 # directly with a method call
-assert do.__getattr__('foo')
+>>> do.__getattr__('foo')
+'bar'
 
 # `.foo` is unset
 # falling back to __getattr__
 # key 'foo' resolved from the dictionary
-assert do.foo == 'bar'
+>>> do.foo
+'bar'
 
 # `.qua` is unset
 # falling back to __getattr__
 # key 'qua' is not in the dictionary
-# throw an error from __getattr__
-assert do.qua
+>>> do.qua
+KeyError: 'qua'
 ```
 
 Make sure to understand what exactly is happening at every step in the snippet above. Since *everything is an object*, this method can be attached to anything! Notice, how the call to `self.dictionary` does not go through `__getattr__`, because the field is defined on the object in the constructor.
