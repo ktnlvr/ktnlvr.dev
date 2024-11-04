@@ -9,7 +9,9 @@ draft: true
 unlisted: false
 ---
 
-Everything good in dynamically typed programming languages are things, not yet well expressed by the statically typed ones. I will die fighting on that hill.
+Everything good in dynamically typed programming languages are things, not yet well expressed by the statically typed ones. I will die fighting on that hill. Here I examine a particular case of behaviour, that is only allowed in dynamic languages[^dynamic-language]. In allows you express a quirky nature of how imports can work in language.
+
+By the end of this article you will understand what quality of life feature was missing from your favourite language, how Python remains so flexible within the Object-Oriented paradigm and why JS is sometimes better than Python.
 
 ## Introduction
 
@@ -99,7 +101,9 @@ This might seem like an awful idea. Usually, property access is an operation tha
 Firstly, you can imagine the example above to be a good tool when dealing with JSON data. Sure, a typed model class is better, but it just always is. If that's your only point, go use a type-checked language. For everyone who stayed, 
 the class above was deemed useful enough to [be in the standard library](https://docs.python.org/3/library/types.html#types.SimpleNamespace)!
 
-Secondly, keep reading, let me cook.
+Secondly, notice how higher this function is to all of the other code. Programming is defining functions, metaprogramming is defining functions that define functions, what is this? This is where the dynamism really shines, we unlocked *hyperprogramming* potential through simple language semantics and a first-order function. 
+
+Thirdly, keep reading, let me cook.
 
 ### Pythonic Modules
 
@@ -290,7 +294,7 @@ GLOBAL_REGISTRY = UnitRegistry()
 
 def __getattr__(self, unit):
     if unit in GLOBAL_REGISTRY:
-        return GLOBAL_REGISTRY.__getattr__(unit)
+        return getattr(GLOBAL_REGISTRY, unit)
     else:
         raise KeyError(...)
 
@@ -300,6 +304,10 @@ def __getattr__(self, unit):
 ```
 
 Hence the source of truth is shared across all possible imports of the module, including all the libraries. A global registry surely would've saved the [Mars Climate Orbiter](https://science.nasa.gov/mission/mars-climate-orbiter/).
+
+We can go even further. Since the main feature of the SI prefixes is that they can be prepended to anything, we can automatically resolve them for any possible unit that we might invent. 
+
+This is where problems begin: `from pint import meter` means that we are importing `meter` the unit or mega `eter`, whatever that is? Luckily, since all the conversions are defined in a file they are fetched from there whenever needed.
 
 ### Express.js
 
@@ -338,7 +346,13 @@ __call__ = Flask
 >>> app = flask()
 ```
 
-## Notes
+### OpenGL Loaders
+
+I'm sorry C, you never had real imports anyway[^cpp-import].
+
+## Nota Bene
+
+By now I assume you get the gist of what I am trying to say. There is a list of edgecases and situations and critizisms without which this whole endevour is incomplete.
 
 ### Import All
 
@@ -357,15 +371,15 @@ However, `__all__` is a variable that can hold the list of all items that should
 ```
 # mega.py
 public = 1
-_private = 2
+private = 2
 
 __all__ = ['public']
 
 >>> from mega import *
 >>> public
 1
->>> _private
-NameError: name 'x' is not defined
+>>> private
+NameError: name 'private' is not defined
 ```
 
 How do you think `__all__` is accessed? Using all the same `__getattr__`. If `__all__` is explicitly defined, `__getatrr__` will not be called for it. In the other case, the `__all__` will have to be returned by the `__getattr__`. For libraries like HTBuilder it is sensible to export common values like `span` and `div` respectively.
@@ -386,20 +400,38 @@ __all__ = ['span', 'div']
 NameError: name 'b' is not defined
 ```
 
+Like with all dunder methods, `__all__` should be used with care. Surprise!
+
 ### Package Versions
 
+### Compilation & Typing
+
+The hands get dirty in type-safe lands. Or not, depends on how much you hate your language. Naive copying of what Python does can be simply expressed as...
+
+```
+def __getattr__(self: Module, name: str) -> T | Any
+```
+
+`T` denotes whatever value *you* want to return. The signature screams that this is a function that can produce a `T` or literally anything else, which sort of encodes the fact that we have no idea what we are really importing. The `Any` really screws up statically typed languages, since most of them don't allow you to pass around literally anything with no type information.
+
+On the flip side, we always know what the actual type of the value will be. By the time we import the name by name the compiler must have already checked that value and type, therefore we know its type... right?
+
+Well, by defining `__getattr__` as a function we permit calling it from wherever, since it is also a module member. Thus, allowing a function to control imports requires that we bring dynamic type resolution to our language. Oh no.
 
 ## Conclusion
 
-As I argued previously, this concept does not exist in the modern programming languages. Can we at least come up with a name for it? This concept is not even googleable.
+---
 
-*P.S. Actually, if you read this far and come up with a nicer name, send it to me and I'll change the article -- <artur.roos@ktnlvr.dev>.*
+*P.S. If you have a name suggestion, feel free to shoot me an email -- <artur.roos@ktnlvr.dev>.*
+
 
 ## Further reading
 
 `__getattribute__`
 
+[^dynamic-language]: The line between interpreted and compiled languages is virtually non-existent. When talking about dynamic languages I mean JavaScript, Python, Lisp. They allow encoding language sematics during program's runtime. This is facilitated by JavaScript's flexible notion of an object, Python's dunder methods and the entirety of Lisp.
 [^python-3.7]: The specific version used is Python ≥ 3.7, since it is the earliest version that allows the sourcery that I'll be demonstrating.
 [^operator-overloading]: This type of overloading is very useful when it comes to representing mathematical objects. It can be argued that it's bad practice, since you never know how the underyling operation is used, but that is really only noticeable in severe cases like the [`std::ostream::operator<<`](https://en.cppreference.com/w/cpp/io/basic_ostream/operator_ltlt) in C++. 
 [^get-attr]: There are actually two dunder methods with similar functionality: `__getattr__` and `__getattribute__`. The former is invoked when looking up actual properties on an object failed. The latter is used to override the standard lookup.
 [^no-tags-defined]: Well, it defines a list of `EMPTY_ELEMENTS` for self-closing elements like `<br>` and `<img>`, but they are basically exceptional.
+[^cpp-import]: [no way.](https://en.cppreference.com/w/cpp/identifier_with_special_meaning/import "import keyword in the C++ standard")
