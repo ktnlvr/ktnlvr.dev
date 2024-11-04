@@ -3,7 +3,7 @@
         {{if not .Params.Unlisted}}
             <li class="{{if .Draft}}unlisted{{end}}">
                 <a href="{{.RelPermalink}}" class="article-title">{{.Title}}</a>{{if .Draft}} (draft){{end}} -
-                {{.Params.Brief}}. <span style="color: var(--gray-color); white-space: nowrap;">
+                {{printf "%s." (strings.Trim .Params.Brief " \t\n")}} <span style="color: var(--gray-color); white-space: nowrap;">
                     {{.Params.Date.Format "January 2, 2006"}}</span>
             </li>
         {{end}}
