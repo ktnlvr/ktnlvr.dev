@@ -1,0 +1,79 @@
+cv:
+  name: Artur Roos
+  location: Kauniainen
+  email: artur.roos@ktnlvr.dev
+  phone: tel:+358-45-187-47-47
+  website: https://ktnlvr.dev/
+  social_networks:
+    - network: LinkedIn
+      username: artur-roos
+    - network: GitHub
+      username: ktnlvr
+  sections:
+    profile:
+      - meow
+    Employment:
+      - company: Freelance
+        position: Python Backend Engineer
+        start_date: 2019-06
+        end_date: 2022-10
+        highlights:
+          - Deployed legacy order-processing systems written in Python 2
+          - Implemented a dynamic work tracking system
+          - Delivered a user-facing image recognition and cropping solution for documents
+      - company: UNiF
+        position: Backend Engineer Contractor
+        location: Remote
+        start_date: 2022-01
+        end_date: 2024-07
+        highlights:
+          - Migrated internal form design toolkit from Yii to Django.
+          - Integrated the Claude Sonet LLM as an internal service for proofreading and learning material creation.
+          - Created and maintained a SaaS Finnish-to-English NLP Translation engine based on publically available datasets.
+          - Assisted in moving the Cloud-based solution to a completely self-hosted infastructure
+          - Optimized the in-house WebRTC relay server, *quadrupling* the bitrate.
+          - Embedded an ML-based solution for realtime noise reducation.
+    projects:
+      - name: Table
+        date: 2024
+        highlights:
+          - An online platform for tabletop gaming. In contrast to popular alternatives, is completely free, easy to set up and allows complete control over the game.
+          - 'Stands on the shoulders of giants: built atop the Godot4 game engine and the Jolt physics.'
+      - name: Dicemind
+        date: 2024
+        highlights:
+          - A tool intended for rolling different sets of dice in large quantities and applying different operations in large quantities. Intended for analysing optimal strategies in tabletop games requiring large quantities of dice (i.e. Dungeons & Dragons, Warhammer 40K). 
+          - Implemented a *Pratt parser* with complete support for arbitrary-precision arithmetic
+          - Added *analytical and stochastic* methods for estimating the values for dice formulae
+          - Created additional modifiers building *on top of existing dice-rolling engines* to cater to the needs of specific gamer groups
+    education:
+      - institution: Metropolia AMK
+        area: Software Engineering
+        degree: BEng
+        start_date: 2024-08
+        end_date: present
+        highlights:
+          - Completed all periods up to date with 5.0/5.0 GPA.
+      - institution: Joensuun Lyseon Lukio IB Programme
+        area: Highschool
+        start_date: 2022-10
+        end_date: 2024-06
+        highlights:
+          - Top of the class grades for HL Mathematics and Physics
+          - '**Extended Essay:** The Game Of Cat And Swan, Applications Of Complex Numbers'
+    technologies:
+      - label: Languages
+        details: Python, C/C++, Rust
+      - label: Technologies
+        details: Django, Flask, FastAPI, MySQL, Postgres, EnTT, box2d, OpenGL, Tokio, Axum, Actix, WebGPU
+    languages:
+      - '**Russian** Native'
+      - '**English** C1 (Professional)'
+      - '**Finnish** Actively learning'
+    miscellaneous:
+      - Designed and reviewed problems for the ''All-Russian Olympiad of Schoolchildren.''
+      - Over 70 public and private repositories on GitHub since 2019.
+      - Often participate in Hackathons and Game Jams with a group of likeminded friends.
+design:
+  theme: sb2nov
+  font_size: 12pt
