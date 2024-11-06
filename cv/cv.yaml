@@ -10,29 +10,36 @@ cv:
     - network: GitHub
       username: ktnlvr
   sections:
+    summary:
+      - IB programme graduate. Self-taught polyglot programmer. Currently 1st-course ICT student in a university. Excited to design inerrant user-facing software.
     profile:
-      - meow
+      - '**Passionate** for the craft and get excited by the premise of working on code in general, no matter the specific area and my level of familiarity with it. Excited to have figured out the intricacies of any (your) codebase.'
+      - "**Communicative** and **direct**. Taught to express ideas precisely and clearly. Work best as a part of a team. Ready to discuss a topic until a conclusion is reached and ask about everything I don't understand."
+      - "**Punctual** and **monochronic**. Everything will be done on time. Always honest when negotiating deadlines. Didn't miss a single deadline since middle school."
+      - '**Meticulous**, but not perfectionist. I focus a lot on edgecases. I always ensure that business-critical processes will behave sanely even in the most bizzare usecases. I act in accordance with my priorities, prefering valuable work to unnecessary polish.'
+      - '**Adaptive**. Due to having worked a lot in large codebases as a freelancer I am used to jumping into a new large project/technology from the get go. Little to no prior training required.'
     Employment:
+      - company: UNiF
+        position: Python/C++ Backend Engineer Contractor
+        location: Remote
+        start_date: 2022-01
+        end_date: 2024-07
+        highlights:
+          - Seamlessly integrated with the development team.
+          - Migrated internal form design toolkit from Yii to Django.
+          - Integrated the Claude Sonet LLM as an internal service for proofreading and learning material creation.
+          - Created and maintained a SaaS Finnish-to-English NLP Translation engine based on publically available datasets.
+          - Assisted in moving the Cloud-based solution to a completely self-hosted infastructure
+          - Optimized the in-house C++20 WebRTC relay server, *quadrupling* the bitrate.
+          - Embedded an ML-based solution for realtime noise reducation.
       - company: Freelance
         position: Python Backend Engineer
         start_date: 2019-06
         end_date: 2022-10
         highlights:
-          - Deployed legacy order-processing systems written in Python 2
-          - Implemented a dynamic work tracking system
-          - Delivered a user-facing image recognition and cropping solution for documents
-      - company: UNiF
-        position: Backend Engineer Contractor
-        location: Remote
-        start_date: 2022-01
-        end_date: 2024-07
-        highlights:
-          - Migrated internal form design toolkit from Yii to Django.
-          - Integrated the Claude Sonet LLM as an internal service for proofreading and learning material creation.
-          - Created and maintained a SaaS Finnish-to-English NLP Translation engine based on publically available datasets.
-          - Assisted in moving the Cloud-based solution to a completely self-hosted infastructure
-          - Optimized the in-house WebRTC relay server, *quadrupling* the bitrate.
-          - Embedded an ML-based solution for realtime noise reducation.
+          - Deployed legacy order-processing systems written in Python 2.
+          - Implemented a dynamic work tracking system.
+          - Delivered a user-facing image recognition and cropping solution for documents.
     projects:
       - name: Table
         date: 2024
@@ -52,8 +59,6 @@ cv:
         degree: BEng
         start_date: 2024-08
         end_date: present
-        highlights:
-          - Completed all periods up to date with 5.0/5.0 GPA.
       - institution: Joensuun Lyseon Lukio IB Programme
         area: Highschool
         start_date: 2022-10
