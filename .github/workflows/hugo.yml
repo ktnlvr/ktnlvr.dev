@@ -39,6 +39,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: 'pip'
       - name: Bring Ubuntu up-to-date
         run: sudo apt update && sudo apt upgrade
       - name: Install Hugo CLI
@@ -47,6 +48,10 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Pandoc
         run: sudo apt install pandoc
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci && npm i -g npx || true"
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -59,7 +64,11 @@ jobs:
             -D \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"    
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Build CV
+        working-directory: ./cv
+        run: |
+          rendercv render cv.yaml --pdf-path ../public/cv.pdf
       - name: Index using Pagefind
         run: | 
           npx pagefind --site public
