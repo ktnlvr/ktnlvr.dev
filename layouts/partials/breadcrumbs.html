@@ -1,7 +1,7 @@
 <ul id="breadcrumbs">
     <li class="crumb">/<a href="/">home</a>/</li>
     {{- range after 1 .Ancestors.Reverse }}
-        <li class="crumb"><a href="{{ .RelPermalink }}">{{ replace (lower .Title) " " "" }}</a>/</li>
+        <li class="crumb"><a href="{{ .RelPermalink }}">{{ replace (lower .Title) " " "-" }}</a>/</li>
     {{- end }}
-    <li class="crumb"><a href="{{ .RelPermalink }}">{{ replace (lower .Title) " " "" }}.md</a></li>
+    <li class="crumb"><a href="{{ .RelPermalink }}">{{ replace (lower .Title) " " "-" }}.md</a></li>
 </ul>
