@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+:root {
+    --dark-green: #6f8e40;
+    --light-green: #a5e02f;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    a {
+        color: var(--light-green);
+    }
+
+    ::selection {
+        background-color: var(--dark-green);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    a {
+        color: var(--dark-green);
+    }
+
+    ::selection {
+        background-color: var(--light-green);
+    }
+}
+
+
 body {
     font-size: 1.2rem;
     font-family: "PT Serif", serif;
@@ -12,14 +39,6 @@ h1 h2 h3 h4 h5 h6 {
     font-family: "PT Serif", serif;
     font-weight: 700;
     font-style: italic;
-}
-
-a {
-    color: #6f8e40;
-}
-
-::selection {
-    background-color: #a1f400;
 }
 
 img {

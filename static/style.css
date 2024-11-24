@@ -2,11 +2,40 @@
 @import url('https://fonts.cdnfonts.com/css/latin-modern-math');
 
 :root {
-    --text-color: #0B0C0D;
-    --gray-color: #5f5f5f;
-    --light-gray-color: #ababab;
-    --accent-color: #236689;
-    --background-color: #FFF;
+    --bg-color-dark: #1D1E22;
+    --bg-color-light: #FFF;
+
+    --text-color-dark: #EEE;
+    --text-color-light: #0B0C0D;
+
+    --text-faded-color-dark: #b3b3b3;
+    --text-faded-color-light: #ababab;
+
+    --text-accent-color-dark: #7cc1e6;
+    --text-accent-color-light: #236689;
+
+    --background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+    --text-color: light-dark(var(--text-color-light), var(--text-color-dark)) --background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+    --text-faded-color: light-dark(var(--text-faded-color-light), var(--text-faded-color-dark));
+    --text-accent-color: light-dark(var(--text-accent-color-light), var(--text-accent-color-dark));
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--bg-color-dark);
+        --text-color: var(--text-color-dark);
+        --text-faded-color: var(--text-faded-color-dark);
+        --text-accent-color: var(--text-accent-color-dark);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: var(--bg-color-light);
+        --text-color: var(--text-color-light);
+        --text-faded-color: var(--text-faded-color-light);
+        --text-accent-color: var(--text-accent-color-light);
+    }
 }
 
 body {
@@ -30,7 +59,7 @@ h1 {
 
 a {
     text-decoration: underline;
-    color: var(--accent-color);
+    color: var(--text-accent-color);
 }
 
 h1 a {
@@ -53,7 +82,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .anchor {
-    color: var(--gray-color);
+    color: var(--text-faded-color);
     text-decoration: none;
 }
 
@@ -64,11 +93,11 @@ header {
 
 footer {
     padding-top: 15%;
-    color: var(--gray-color);
+    color: var(--text-faded-color);
 }
 
 footer>a {
-    color: var(--gray-color);
+    color: var(--text-faded-color);
 }
 
 iframe {
@@ -82,7 +111,7 @@ iframe {
     padding: 0;
     text-align: right;
     font-weight: normal;
-    color: var(--gray-color);
+    color: var(--text-faded-color);
 }
 
 sup::before {
@@ -135,6 +164,7 @@ pre {
 }
 
 #breadcrumbs {
+    color: var(--text-color);
     font-size: smaller;
     padding-left: 0;
 }
@@ -144,12 +174,12 @@ pre {
     display: inline;
 }
 
-.crumb > a {
-    color: var(--text-color);
+.crumb>a {
+    color: inherit;
     text-decoration: none;
 }
 
-.crumb > a:hover {
+.crumb>a:hover {
     text-decoration: underline;
 }
 
