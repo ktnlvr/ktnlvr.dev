@@ -3,6 +3,8 @@ title: "ezd6"
 url: /ezd6
 date: 2024-04-24T17:22:30.531+0300
 brief: "analysis of ezd6 and my homebrew extensions to it" 
+
+unlisted: true
 draft: true
 
 favicon: ezd6.ico
