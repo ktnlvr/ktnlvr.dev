@@ -1,8 +1,9 @@
 ---
 title: "dotfiles"
-url: df
 date: 2024-04-21T19:55:27.205+0300
 publishDate: 2024-09-20T13:05:27.193+0300
+aliases:
+  - /df
 
 brief: "my mayhem of system & software configs" 
 link: https://github.com/ktnlvr/dotfiles

@@ -1,7 +1,8 @@
 ---
 title: Casual Maths
 date: 2024-09-15T14:24:40,000+03:00
-url: /cm
+aliases:
+    - /cm
 
 brief: |
     my encounters with mathematics in a casual setting

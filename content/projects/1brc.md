@@ -1,7 +1,8 @@
 ---
 title: 1brc
-url: /1brc
 date: 2024-06-27T11:41:10,000+03:00
+aliases:
+    - /1brc
 
 brief: parsing 1 billion (with a b) rows of temperature data
 link: https://github.com/ktnlvr/1brc

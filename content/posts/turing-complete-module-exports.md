@@ -1,7 +1,8 @@
 ---
 title: Turing-Complete Module Exports
 date: 2024-09-13T14:02:09,000+03:00
-url: /mafcv
+aliases:
+    - /tcme
 
 brief: |
     modules deserve to have their exports easily controlled

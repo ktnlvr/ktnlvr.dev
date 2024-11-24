@@ -1,7 +1,10 @@
 ---
 title: ktnlvr.dev
-url: /kldd
 draft: true
+aliases:
+    - /this
+    - /ktnlvr.dev
+    - /kldd
 
 unlisted: true
 brief: the website you are looking at right now, very meta
