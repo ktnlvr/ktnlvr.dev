@@ -59,6 +59,8 @@ cv:
         degree: BEng
         start_date: 2024-08
         end_date: present
+        highlights:
+          - '5.0/5.0 GPA (Grade Point Average) as of now.'
       - institution: Joensuun Lyseon Lukio IB Programme
         area: Highschool
         start_date: 2022-10
