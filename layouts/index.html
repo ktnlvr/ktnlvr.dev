@@ -30,10 +30,10 @@
             Alternatively, look at the <a href="{{.Site.BaseURL}}projects">projects</a> I made or
             read the <a href="{{.Site.BaseURL}}posts">thoughts</a> I think.
         </p>
+        {{- partial "content-list.html" .Site.RegularPages -}}
         <noscript>
             <p>JavaScript disabled? <a href="{{.Site.BaseURL}}projects/ktnlvr.dev/#noscript">I respect that.</a></p>
         </noscript>
-        {{- partial "content-list.html" .Site.RegularPages -}}
     </main>
     {{- partial "footer.html" . -}}
 </body>
