@@ -8,6 +8,7 @@ date: 2024-12-11T19:33:52,000+02:00
 
 * [Neovim](https://neovim.io/). Best text editing software ever.
 * [Obsidian](https://obsidian.md/). Markdown editor with internal links and a graph view. A way to keep your notes organised.
+* [Mullvad](https://mullvad.net/en). My favourite VPN.
 
 ## Tools
 
@@ -30,7 +31,10 @@ date: 2024-12-11T19:33:52,000+02:00
 * [Bore](https://github.com/ekzhang/bore). CLI for thing client tunneling.
 * [ripgrep](https://github.com/BurntSushi/ripgrep). Fastest `grep` alternative.
 * [croc](https://github.com/schollz/croc). Sharing files across multiple computers.
+* [syncthing](https://syncthing.net). Peer to peer file synchronization in a local network.
+* [wireguard](https://www.wireguard.com/). Best self-hostable VPN ever.
 
 ## Misc
 
 * [arXiv](https://arxiv.org/). Free distribution service for scholarly articles.
+* [Spacescape](https://github.com/FrozenStormInteractive/Spacescape). A free and open-source skybox generator.
