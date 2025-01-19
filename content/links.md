@@ -2,6 +2,7 @@
 title: Links
 brief: This post contains a list of software/websites I find useful in no particular order
 date: 2024-12-11T19:33:52,000+02:00
+unlisted: true
 ---
 
 ## Software
@@ -38,3 +39,4 @@ date: 2024-12-11T19:33:52,000+02:00
 
 * [arXiv](https://arxiv.org/). Free distribution service for scholarly articles.
 * [Spacescape](https://github.com/FrozenStormInteractive/Spacescape). A free and open-source skybox generator.
+* [selfh.st](https://selfh.st/). Home of all things self-hosted.
