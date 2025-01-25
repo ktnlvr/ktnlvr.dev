@@ -11,31 +11,23 @@ cv:
       username: ktnlvr
   sections: 
     objective:
-      - Designing unbreakable software fast.
+      - Designing and delivering unbreakable software fast.
     skills:
-      - '**Software Architecture** *(5 years)*.'
-      - '**Python** *(5 years)*. Django, FastAPI, Flask, SQLAlchemy'
-      - '**C/C++** *(4 years)*. Boost, CMake, gtest/gmock, Asio, Vulkan, OpenGL, EnTT'
-      - '**Rust** *(3 years)*. tokio, diesel, wgpu'
-      - '**JavaScript** *(2 years)*. React, HTMX'
+      - Python *(6 years)*. Django, FastAPI, Flask, SQLAlchemy, PyTorch
+      - 'Software Architecture *(5 years)*.'
+      - 'C/C++ *(3 years)*. Boost, Asio, Vulkan, EnTT, OpenGL.'
+      - 'Rust *(2 years)*. nom, tokio, diesel.'
+      - 'JavaScript *(2 years)*. React, HTMX'
       - Java, C#, Gleam, Haskell, GDScript et al. *(some)*
     profile:
-      - "**Punctual** and **monochronic**. Everything will be done on time."
-      - '**Meticulous**, but not a perfectionist. Good at finding balance between polish and speed.'
-      - '**Adaptive**. Used to jumping into a new large project/technology from the get go.'
+      - "Punctual and monochronic. Everything will be done on time."
+      - 'Meticulous, but not a perfectionist. Good at finding balance between polish and speed.'
+      - 'Adaptive. Used to jumping into a new large project/technology from the get go.'
     Employment:
-      - company: UNiF
-        position: Python/C++ Backend Engineer Intern
-        location: Remote
-        start_date: 2022-01
-        end_date: 2024-07
-        highlights:
-          - '*Quadrupled* the throughput of the internal videoconferencing tool.'
-          - Migrated a cloud-based solution into an entirely self-hosted architecture in one sprint.
       - company: Freelance
         position: Python Backend Engineer
         start_date: 2019-06
-        end_date: 2022-10
+        end_date: 2024-09
     education:
       - institution: Metropolia AMK
         area: Software Engineering
@@ -53,3 +45,4 @@ cv:
 design:
   theme: sb2nov
   font_size: 12pt
+  disable_page_numbering: true
