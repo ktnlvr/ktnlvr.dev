@@ -12,7 +12,7 @@ unlisted: false
 
 Everything good in dynamically typed programming languages are things, not yet well expressed by the statically typed ones. I will die fighting on that hill. Here I examine a particular case of behaviour, that is only allowed in dynamic languages[^dynamic-language]. In allows you express a quirky nature of how imports can work in language.
 
-By the end of this article you will understand what quality of life feature was missing from your favourite language, how Python remains so flexible within the Object-Oriented paradigm and why JS is sometimes better than Python.
+By the end of this article you will understand why dunder methods are my favourite small feature in Python and how you can use them in your projects to make your APIs more verbose.
 
 ## Introduction
 
@@ -276,6 +276,12 @@ def __getattr__(self, var: str):
 
 The snippet above effectively cuts out circa 30% of the code in the file without breaking compatibility. Lovely, isn't it?
 
+
+### OpenGL Loaders
+
+I'm sorry C, you never had real imports anyway[^cpp-import]. Let's hope we can ~~macro~~ template this one away.
+
+
 ### Pint
 
 [Pint](https://pint.readthedocs.io/) brings units to Python. Meters, newtons, gigaparsecs per hertz - you can have them all! The definitions are loaded from a text file, which serves as a single source of truth for the unit conversion. It allows you to make all your computations unitful:
@@ -308,7 +314,9 @@ Hence the source of truth is shared across all possible imports of the module, i
 
 We can go even further. Since the main feature of the SI prefixes is that they can be prepended to anything, we can automatically resolve them for any possible unit that we might invent. 
 
-This is where problems begin: `from pint import meter` means that we are importing `meter` the unit or mega `eter`, whatever that is? Luckily, since all the conversions are defined in a file they are fetched from there whenever needed.
+This is where problems begin: `from pint import meter` means that we are importing `meter` the unit or a "mega" `eter`, whatever that is? Luckily, since all the conversions are defined in a file they are fetched from there whenever needed.
+
+All in all, hopefully this one is rather obvious. Although, the next one is more curious.
 
 ### Express.js
 
@@ -347,17 +355,20 @@ __call__ = Flask
 >>> app = flask()
 ```
 
-### OpenGL Loaders
+This approach could be cool for libraries that export a single obvious function. Even though they are rare, maybe someone still makes those[^left-pad]:
 
-I'm sorry C, you never had real imports anyway[^cpp-import].
+```
+import leftpad
 
-## Nota Bene
+>>> leftpad("123", 5, "0")
+"00123"
+```
 
-By now I assume you get the gist of what I am trying to say. There is a list of edgecases and situations and critizisms without which this whole endevour is incomplete.
+The main counterpoint to this approach is that it's not very verbose. It's not immediately evident where one could go to check how `leftpad` works. This example is on the worse side, since it will leave all the developers unfamiliar with this feature very stumped.
 
-### Import All
+## Import All
 
-Python has a syntax for importing all items from a module. Most languages contain something similar and you can imagine how that is useful.
+There is one aspect of this feature that is important to note: importing everything from the module. Python has a syntax for importing all items from a module. Most languages contain something similar. You can imagine how that is useful.
 
 ```
 # dump all functions into the global scope
@@ -401,35 +412,22 @@ __all__ = ['span', 'div']
 NameError: name 'b' is not defined
 ```
 
-Like with all dunder methods, `__all__` should be used with care. Surprise!
-
-### Package Versions
-
-### Compilation & Typing
-
-The hands get dirty in type-safe lands. Or not, depends on how much you hate your language. Naive copying of what Python does can be simply expressed as...
-
-```
-def __getattr__(self: Module, name: str) -> T | Any
-```
-
-`T` denotes whatever value *you* want to return. The signature screams that this is a function that can produce a `T` or literally anything else, which sort of encodes the fact that we have no idea what we are really importing. The `Any` really screws up statically typed languages, since most of them don't allow you to pass around literally anything with no type information.
-
-On the flip side, we always know what the actual type of the value will be. By the time we import the name by name the compiler must have already checked that value and type, therefore we know its type... right?
-
-Well, by defining `__getattr__` as a function we permit calling it from wherever, since it is also a module member. Thus, allowing a function to control imports requires that we bring dynamic type resolution to our language. Oh no.
+Like all dunder methods, `__all__` should be used with consideration.
 
 ## Conclusion
 
----
+One aspect I deliberetly left untouched is typing and compilation. I am not qualified to try and express that concept in any type system. Hopefully, someone can expand on this in the future. Hopefully, that can be a more educated me.
 
-*P.S. If you have a name suggestion, feel free to shoot me an email -- <artur.roos@ktnlvr.dev>.*
+All in all, this feature is useful in very niche circumstances, but there are 2 general usecases for it:
 
+1. You are exporting named things, like the variables in SymPy or the units in Pint.
+2. You have a singleton object that should be the same everywhere, like a function or the units in Pint. 
 
-## Further reading
+For everything else, use something else.
 
-`__getattribute__`
+*P.S. If you are a Python developer and happen to have applied that in your own projects, feel free to share: [artur.roos@ktnlvr.dev](mailto:artur.roos@ktnlvr.dev).*
 
+[^left-pad]: One JavaScript package containing only 11 lines of code once brought down a good chunk of the ecosystem for a short period of time. More on [Wikipedia](https://en.wikipedia.org/wiki/Npm_left-pad_incident).
 [^dynamic-language]: The line between interpreted and compiled languages is virtually non-existent. When talking about dynamic languages I mean JavaScript, Python, Lisp. They allow encoding language sematics during program's runtime. This is facilitated by JavaScript's flexible notion of an object, Python's dunder methods and the entirety of Lisp.
 [^python-3.7]: The specific version used is Python ≥ 3.7, since it is the earliest version that allows the sourcery that I'll be demonstrating.
 [^operator-overloading]: This type of overloading is very useful when it comes to representing mathematical objects. It can be argued that it's bad practice, since you never know how the underyling operation is used, but that is really only noticeable in severe cases like the [`std::ostream::operator<<`](https://en.cppreference.com/w/cpp/io/basic_ostream/operator_ltlt) in C++. 
