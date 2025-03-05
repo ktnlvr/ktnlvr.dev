@@ -18,4 +18,4 @@ There is a good in-depth explanation done by Freya Holmér ([link](https://www.y
 
 ## Problem Statement
 
-\[\dfrac{dx}{dt} = \text{const}\]
+$$\dfrac{dx}{dt} = \text{const}$$

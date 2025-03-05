@@ -1,6 +1,6 @@
 ---
 title: Links
-brief: This post contains a list of software/websites I find useful in no particular order
+brief: An opinionates list of software/websites I find useful in no particular order
 date: 2024-12-11T19:33:52,000+02:00
 unlisted: true
 ---
@@ -19,7 +19,7 @@ unlisted: true
 
 ## Tutorials
 
-* [Geometric Algebra for Computer Scientists](https://geometricalgebra.org/). 
+* [Geometric Algebra for Computer Scientists](https://geometricalgebra.org/). Literally what is says in the title.
 
 ## Services
 
@@ -29,10 +29,10 @@ unlisted: true
 
 ## Utilities
 
-* [Bore](https://github.com/ekzhang/bore). CLI for thing client tunneling.
-* [ripgrep](https://github.com/BurntSushi/ripgrep). Fastest `grep` alternative.
+* [bore](https://github.com/ekzhang/bore). CLI for thing client tunneling.
+* [ripgrep](https://github.com/BurntSushi/ripgrep). Best `grep` alternative.
 * [croc](https://github.com/schollz/croc). Sharing files across multiple computers.
-* [syncthing](https://syncthing.net). Peer to peer file synchronization in a local network.
+* [syncthing](https://syncthing.net). Peer to peer file synchronization in a network.
 * [wireguard](https://www.wireguard.com/). Best self-hostable VPN ever.
 
 ## Misc
@@ -40,3 +40,4 @@ unlisted: true
 * [arXiv](https://arxiv.org/). Free distribution service for scholarly articles.
 * [Spacescape](https://github.com/FrozenStormInteractive/Spacescape). A free and open-source skybox generator.
 * [selfh.st](https://selfh.st/). Home of all things self-hosted.
+* [public.work](https://public.work). ~~Search engine~~ Gallery of public domain works of art.
