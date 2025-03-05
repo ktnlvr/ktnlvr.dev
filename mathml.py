@@ -12,6 +12,10 @@ if __name__ == "__main__":
                 with open(path, "r+") as f:
                     content = f.read()
 
+                    # even worse than parsing HTML with regex, but hopefully reliable
+                    head, begin, body = content.partition("<body>")
+                    body, end, tail = body.partition("</body>")
+
                     pandoc = [
                         "pandoc",
                         "-f",
@@ -23,8 +27,8 @@ if __name__ == "__main__":
                     proc = subprocess.Popen(
                         pandoc, stdout=subprocess.PIPE, stdin=subprocess.PIPE
                     )
-                    proc.stdin.write(content.encode())
+                    proc.stdin.write(body.encode())
                     proc.stdin.close()
-                    replacement = proc.stdout.read().decode().strip()
+                    body = proc.stdout.read().decode().strip()
                     f.seek(0)
-                    f.write(replacement)
+                    f.write("".join([head, begin, body, end, tail]))

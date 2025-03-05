@@ -2,7 +2,7 @@ cv:
   name: Artur Roos
   location: Kauniainen
   email: artur.roos@ktnlvr.dev
-  phone: tel:+358-45-187-47-47
+  phone: tel:+358-45-187-47-37
   website: https://ktnlvr.dev/
   social_networks:
     - network: LinkedIn
@@ -11,36 +11,29 @@ cv:
       username: ktnlvr
   sections: 
     skills:
-      - 'Python *(6 years)*. FastAPI, Django.'
+      - 'Python *(6 years)*. PyTorch, FastAPI, Flask, SQLAlchemy, Django.'
       - 'C/C++ *(3 years)*. EnTT, Boost, Asio.'
       - 'Rust *(2 years)*. wGPU, tokio, diesel.'
-      - 'JavaScript, HTML, CSS *(1 year)*. '
-      - 'Misc: Linux (daily-driving Debian for 4 years), Vulkan/OpenGL, CMake, Bash, SQL.'
+      - 'JavaScript, HTML, CSS *(1 year)*. React, JQuery.'
+      - 'Linux (daily-driving Debian for 4 years), Git, Vulkan/OpenGL, CMake, Bash, SQL, *et al.*'
+      - Java, C#, GDScript, Haskell, Gleam, etc. *(some)*
     projects:
-      - name: "**Drakula (Python, JavaScript, SQL)**"
-        date: '[v1](https://github.com/ktnlvr/drakula) [v2](https://github.com/ktnlvr/drakula-v2)'
-        highlights:
-          - A university project of building an engaging *multiplayer* game with horrors elements.
-          - Played a mentoring role, allowing less experiences peers the opportunity 
       - name: "**Retort (C/C++, Vulkan)**"
         date: '[ktnlvr/retort](https://github.com/ktnlvr/retort)'
         highlights:
-          - Reactive and highly-responsive environment for running Fragment Shader.
-          - Includes *hot reloading*, *dynamic shader compilation into SPIR-V* and integrates *ImGUI* into a Vulkan environment.
-          - Interoperability with ray shaders currently under construction.
+          - Developed a reactive and highly responsive environment for running Fragment Shaders.
+          - Includes *hot reloading*, *dynamic shader compilation* and integrates *ImGUI* into a Vulkan-based environment.
       - name: "**Wreckage (Rust, Vulkan)**"
         date: '[ktnlvr/wreckage](https://github.com/ktnlvr/wreckage)'
         highlights:
-          - A GPU based raytracer that uses Rust and Vulkan to draw scenes through Compute Shaders.
-          - Applies AABBs to optimize rendering complex scenes.
+          - Developed a GPU-based ray tracer using Rust and Vulkan for rendering scenes with Compute Shaders.
+          - Utilizes Axis-Aligned Bounding Boxes (AABBs) to optimize the rendering of complex scenes.
     profile:
-      - "Aspiring. I am a self-taught programmer, it has been and will continue to be my main hobby. I am greatly invested in growing as an engineer in all direct and tangential areas of knowledge."
+      - "Aspiring. I have been continuously self-studying programming for 6 years. This amount of motivation and persistence applies to all areas of my life, both work and hobbies."
       - "Creative. IB, Hackathons and Olympiads taught me to find inventive solutions to challenging problems."
-      - "Highly-Motivated. I am willing to learn the skills to complete any task. To me, this is an essential part of growth."
+      - "Self-Starter. I am willing to learn the skills to complete any task. To me, this is an essential part of growth."
       - "Team Player. I prefer working in a team, the perspectives of others are very valuable to me."
       - "Punctual and monochronic. Everything will be done on time."
-      - 'Meticulous. Good at finding balance between polish and speed.'
-      - 'Adaptable. Used to jumping into a new large project/technology/team from the get go.'
     education:
       - institution: Metropolia University of Applied Sciences
         area: Software Engineering
