@@ -41,3 +41,4 @@ unlisted: true
 * [Spacescape](https://github.com/FrozenStormInteractive/Spacescape). A free and open-source skybox generator.
 * [selfh.st](https://selfh.st/). Home of all things self-hosted.
 * [public.work](https://public.work). ~~Search engine~~ Gallery of public domain works of art.
+* [noise explorer](https://noiseexplorer.com/#). Code and formal-verifictation generator for the [Noise Protocol Framework](https://noiseprotocol.org/noise.html).
