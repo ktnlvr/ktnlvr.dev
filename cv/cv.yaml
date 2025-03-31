@@ -11,13 +11,18 @@ cv:
       username: ktnlvr
   sections: 
     skills:
-      - 'Python *(6 years)*. PyTorch, FastAPI, Flask, SQLAlchemy, Django.'
+      - 'Python *(6 years)*. PyTorch, FastAPI, Flask, SQLAlchemy, Django, Pydantic.'
       - 'C/C++ *(3 years)*. EnTT, Boost, Asio.'
       - 'Rust *(2 years)*. wGPU, tokio, diesel.'
-      - 'JavaScript, HTML, CSS *(1 year)*. React, JQuery.'
-      - 'Linux (daily-driving Debian for 4 years), Git, Vulkan/OpenGL, CMake, Bash, SQL, *et al.*'
-      - Java, C#, GDScript, Haskell, Gleam, etc. *(some)*
+      - 'JavaScript, HTML, CSS *(2 years)*. React, JQuery.'
+      - 'Linux (daily-driving Debian for 2 years), Git, Vulkan/OpenGL, CMake, Bash, SQL , *et al.*'
+      - 'Java, C#, GDScript, Haskell, Gleam, etc. *(some)*'
     projects:
+      - name: "**Dracula (JavaScript, Three.js, FastAPI)**"
+        date: '[ktnlvr/drakula-v2](https://github.com/ktnlvr/drakula-v2)'
+        highlights:
+          - Designed complex turn-based game logic and connected it with the realtime UI.
+          - Orchestrated the organizational processes and removed developer friction.
       - name: "**Retort (C/C++, Vulkan)**"
         date: '[ktnlvr/retort](https://github.com/ktnlvr/retort)'
         highlights:
@@ -29,7 +34,7 @@ cv:
           - Developed a GPU-based ray tracer using Rust and Vulkan for rendering scenes with Compute Shaders.
           - Utilizes Axis-Aligned Bounding Boxes (AABBs) to optimize the rendering of complex scenes.
     profile:
-      - "Aspiring. I have been continuously self-studying programming for 6 years. This amount of motivation and persistence applies to all areas of my life, both work and hobbies."
+      - "Aspiring. I have been continuously self-studying programming for 6 years. This amount of motivation and persistence applies to all areas of my life."
       - "Creative. IB, Hackathons and Olympiads taught me to find inventive solutions to challenging problems."
       - "Self-Starter. I am willing to learn the skills to complete any task. To me, this is an essential part of growth."
       - "Team Player. I prefer working in a team, the perspectives of others are very valuable to me."
