@@ -9,7 +9,8 @@ unlisted: true
 
 * [Neovim](https://neovim.io/). Best text editing software ever.
 * [Obsidian](https://obsidian.md/). Markdown editor with internal links and a graph view. A way to keep your notes organised.
-* [Mullvad](https://mullvad.net/en). My favourite VPN.
+* [WireGuard](https://www.wireguard.com/). My favourite VPN.
+* [Mullvad](https://mullvad.net/en). My second favourite VPN.
 
 ## Tools
 
@@ -34,6 +35,8 @@ unlisted: true
 * [croc](https://github.com/schollz/croc). Sharing files across multiple computers.
 * [syncthing](https://syncthing.net). Peer to peer file synchronization in a network.
 * [wireguard](https://www.wireguard.com/). Best self-hostable VPN ever.
+* [plocate](https://plocate.sesse.net/). Fast indexed search across your entire system. Like [Everything](https://www.voidtools.com/support/everything/) on Windows.
+* [mprocs](https://github.com/pvolok/mprocs). Running parallel commands in a good TUI. Fantastic for complex debugging.
 
 ## Misc
 
