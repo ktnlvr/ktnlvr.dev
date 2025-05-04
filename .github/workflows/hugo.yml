@@ -40,8 +40,6 @@ jobs:
         with:
           python-version: "3.10"
           cache: 'pip'
-      - name: Bring Ubuntu up-to-date
-        run: sudo apt update && sudo apt upgrade
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
@@ -72,13 +70,10 @@ jobs:
       - name: Index using Pagefind
         run: | 
           npx pagefind --site public
-      - name: Replace LaTeX with MathML
-        run: ./mathml.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-
   deploy:
     environment:
       name: github-pages
