@@ -27,7 +27,7 @@ TypeError: format string didn't convert all arguments
 
 This should raise some eyebrows. It is honest and it being a `TypeError` is expected, after all the variables are strings. Anyone who used Python before 3.6 should already know whats up[^fstring].
 
-Before syntax like `f"{Y}-{M}-{D}"` was possible, you would have to write something like `"%d-%02d-%02d" % (Y, M, D)`. This syntax has lingered on from **Python 1**, released in **1991**. I guess the percentage symbol for the formatting operator is in reference to the percentage symbol prepending the value placeholders, which are in turn a holdover from **1973**. 
+Before syntax like `f"{Y}-{M}-{D}"` was possible, you would have to write something like `"%d-%02d-%02d" % (Y, M, D)`. This syntax has lingered on from **Python 1**, released in **1991**. I guess the percentage symbol for the formatting operator is in reference to the percentage symbol prepending the value placeholders, which are in turn a holdover from C, from **1973**. 
 
 Knowing that a feature from *50 years ago* caused a bug in my code instills in me some sort of primordial honor.
 
