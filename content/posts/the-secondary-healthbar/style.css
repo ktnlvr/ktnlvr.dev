@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+:root {
+    --text-accent-color-dark: #e9a859;
+    --text-accent-color-light: #cd8014;
+}
+
+body {
+    font-family: "Merriweather", serif;
+}
