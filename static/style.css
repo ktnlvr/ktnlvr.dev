@@ -18,6 +18,8 @@
     --text-color: light-dark(var(--text-color-light), var(--text-color-dark)) --background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
     --text-faded-color: light-dark(var(--text-faded-color-light), var(--text-faded-color-dark));
     --text-accent-color: light-dark(var(--text-accent-color-light), var(--text-accent-color-dark));
+
+    font-family: "Poppins", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,7 +49,6 @@ body {
     line-height: 1.6;
     font-size: 1.2rem;
     padding: 0 5%;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -151,7 +152,14 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
+}
+
+img + em {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-style: normal;
 }
 
 pre {
